@@ -381,7 +381,7 @@
                 </div>
             </section>
 
-            <!-- flat work -->
+            <!-- testimonials starts flat work -->
             <section class="tf-space flat-testimonial home2">
                 <div class="container">
                     <div class="row">
@@ -500,7 +500,10 @@
                     </div>
                 </div>
             </section>
-            
+            <!-- testimonials end -->
+
+
+            <!-- Carousel for Brands -->
             <section class="flat-brand">
                 <div class="container">
                     <div class="row">
@@ -550,5 +553,8 @@
                     </div>
                 </div>
             </section>
+            <!-- Brands end here -->
 
+
+            
             <?php include("include/footer.php") ?>   

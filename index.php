@@ -10,7 +10,7 @@
     // 2 MAKE QUERY FOR SERVICES
     $fetch_services=$app->getservice();
 
-    // USING ANOTHOR METHOD TO DO THIS  WITH WHIILE LOOP
+    // USING ANOTHER METHOD TO DO THIS  WITH WHILE LOOP
     // $fetch_services=[];
     // while($row=$services->fetch(PDO:: FETCH_OBJ)){
     //     $fetch_services[]=$row; 
@@ -24,7 +24,11 @@
 
     //5 MAKE QUERY FOR BLOGS
     $all_blogs=$app->blogs();
+    // print_r($all_blogs);
 
+
+    // 6 MAKE QUERY FOR TESTIMONIALS
+    $fetch_testimonials=$app->testimonials();
 
 
     /* HOW TO FETCH A SINGLE COLUMN FROM A TABLE
@@ -45,21 +49,6 @@
 
 
 
-    // 4 MAKE QUERY FOR TESTIMONIALS
-    $testimonials= $db->query("SELECT * from testimonials");
-    $testimonials->execute();
-
-    // Fetch Data
-    $fetch_testimonials= $testimonials->fetchAll(PDO:: FETCH_OBJ);
-    // print_r($fetch_team);
-    // die();
-
-    
-
-    // 5 MAKE QUERY FOR TESTIMONIALS
-    $blogs= $db->query("SELECT * from blogs");
-    $blogs->execute();
-
     // Fetch Data
     // $all_blogs= $blogs->fetchAll(PDO:: FETCH_OBJ);
     // print_r($fetch_team);
@@ -72,9 +61,7 @@
             print_r($blog->Btitle);
             echo "<pre>";
 
-        }
-        
-
+        }        
     }else{
         echo "<div style='color:red;'>We don't have any records for you</div>";
     }*/
@@ -453,8 +440,7 @@
                         <?php endforeach; ?>     
                     </div>
                 </div>
-            </section>
-            
+            </section>            
             <!-- END OF OUR TEAM -->
 
 
@@ -605,7 +591,7 @@
                                     <?php foreach($fetch_testimonials as $testimonial) :?>
                                         <div class="swiper-slide testimonial-post ">                                       
                                         <div class="content">                                  
-                                            <h3><?php echo $testimonial->Tname; ?></h3>
+                                            <h3><?php echo $testimonial->_name; ?></h3>
                                             <div class="reviews">
                                                 <span class="star">
                                                     <i class="fas fa-star"></i>
@@ -617,7 +603,7 @@
                                                 <span class="review">5 Reviews</span>
                                             </div>
                                             <div class="tf-texts">                                              
-                                                <span class="text"><?php echo $testimonial->Tcontent; ?></span>
+                                                <span class="text"><?php echo $testimonial->_content; ?></span>
                                                 <span class="media-1">
                                                     <img src="assets/images/icon/testi-2.png" alt="images">                                
                                                 </span> 

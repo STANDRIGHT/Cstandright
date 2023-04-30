@@ -1,4 +1,18 @@
-<?php include("include/header.php") ?>   
+<?php include("include/header.php") ?>  
+
+<?php    
+
+    // 3 MAKE QUERY FOR TEAM
+    $fetch_teams=$app->team(); 
+
+
+    // 6 MAKE QUERY FOR TESTIMONIALS
+    $fetch_testimonials=$app->testimonials();
+
+
+    // 2 MAKE QUERY FOR SERVICES
+    $fetch_services=$app->getservice();
+?>
 
             <!-- /#site-header -->
                 <section class="flat-title-page page-about"><div class="overlay-page"></div>
@@ -27,8 +41,10 @@
                         </div>
                     </div>
                 </section>
-            </div>
             <!-- #site-header-wrap -->
+
+
+
 
 
         <!-- flat and frequent questions -->
@@ -167,7 +183,7 @@
 
 
 
-            <!-- OUR SERVICES -->
+            <!-- OUR SERVICES CARD -->
             <section class="tf-space flat-service home2 page">
                 <div class="container">
                     <div class="row">
@@ -180,55 +196,18 @@
                         <div class="col-lg-12">
                             <div class="swiper-container service-slider carousel-4">
                                 <div class="swiper-wrapper">
-                                    <div class="swiper-slide service-post post wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
-                                        <div class="media">
-                                            <img src="assets/images/image-box/service-01.png" alt="images">                                
+                                    <?php foreach($fetch_services as $services) : ?>
+                                        <div class="swiper-slide service-post post wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
+                                            <div class="media">
+                                                <img src="assets/images/image-box/<?php echo $services->png ?>" alt="images">                                
+                                            </div>
+                                            <div class="content">                                  
+                                                <h3><a href="service-details.php?=id<?php echo $services->_Sid ?>"><?php echo $services->title ?></a></h3>                                        
+                                            </div>
                                         </div>
-                                        <div class="content">                                  
-                                            <h3><a href="service-details.php">Wev Development</a></h3>                                        
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide service-post post wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1700ms">
-                                        <div class="media">
-                                            <img src="assets/images/image-box/service-02.png" alt="images">                                
-                                        </div>
-                                        <div class="content">                                
-                                            <h3><a href="service-details.php">Digital Marketing</a></h3>                                           
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide service-post post wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1900ms">
-                                        <div class="media">
-                                            <img src="assets/images/image-box/service-03.png" alt="images">                                
-                                        </div>
-                                        <div class="content">                                
-                                            <h3><a href="service-details.php">Content Writing</a></h3>                                         
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide service-post post wow fadeInUp" data-wow-delay="0ms" data-wow-duration="2100ms">
-                                        <div class="media">
-                                            <img src="assets/images/image-box/service-04.png" alt="images">                                
-                                        </div>
-                                        <div class="content">                                
-                                            <h3><a href="service-details.php">Strategy & Marketing</a></h3>                                           
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide service-post post wow fadeInUp" data-wow-delay="0ms" data-wow-duration="2300ms">
-                                        <div class="media">
-                                            <img src="assets/images/image-box/service-01.png" alt="images">                                
-                                        </div>
-                                        <div class="content">                                
-                                            <h3><a href="service-details.php">Strategy & Marketing</a></h3>                                           
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide service-post post wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
-                                        <div class="media">
-                                            <img src="assets/images/image-box/service-02.png" alt="images">                                
-                                        </div>
-                                        <div class="content">                                
-                                            <h3><a href="service-details.php">Strategy & Marketing</a></h3>                                           
-                                        </div>
-                                    </div>                                 
-                                </div> 
+                                    <?php endforeach ; ?>                                    
+                                </div>
+                                
                                 <div class="swiper-pagination"></div>                                     
                             </div>
                         </div>     
@@ -239,183 +218,120 @@
 
 
 
-            <!-- DIGITAL AGENCY -->
+            <!-- QUALITATIVE SERVICES  -->
                 <section class="tf-space flat-servece page"><div class="overlay-page"></div>
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-12">
-                                <div class="title">We want to servece you all digital agency.</div>
+                                <div class="title">We want to provide you a Qualitative Service.</div>
                             </div>   
                         </div>
                     </div>
                 </section>
-            <!-- DIGITAL AGENCY ENDS HERE -->
+            <!--ENDS QUALITATIVE SERVICES HERE -->
 
 
 
 
-
-
-            <!-- flat team -->
-                <section class="tf-space flat-team flat-blog-grid">
+            <br>
+            <br>
+            <!-- OUR TEAM -->
+            <section class="flat-team flat-blog-grid">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="team-heading wow fadeInDown" data-wow-delay="0ms" data-wow-duration="500ms">
-                                <div class="tf-sub-title">Working Member</div>
-                                <h2 class="tf-title">Expart <span class="text-color-3 style-title">[Team]</span> Member</h2>
+                                <div class="tf-sub-title">Working Members</div>
+                                <h2 class="tf-title">Expart <span class="text-color-3 style-title">[Team]</span> Members</h2>
                             </div>
-                        </div>                       
-                        <div class="col-lg-3 col-md-6">
+                        </div>
+
+                        <?php foreach($fetch_teams as $teams) : ?>
+                            <div class="col-lg-3 col-md-6">
                             <div class="team-box grid-post wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
                                 <div class="media">
-                                    <img src="assets/images/image-box/team-1.jpg" alt="images">                                
+                                    <img src="assets/images/image-box/<?php echo $teams->_images; ?>" alt="images">                                
                                 </div>
                                 <div class="content"> 
-                                    <div class="sub-title-content">Bixos Founder</div>                                
-                                    <h3><a href="team.php">Subrom Monalisa Era</a></h3>
+                                    <div class="sub-title-content"><?php echo $teams->_position; ?></div>                                
+                                    <h3 ><a href="team.php?team=<?php echo $teams->_id; ?>"><?php echo $teams->_name; ?></a></h3>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-6">
-                            <div class="team-box grid-post wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1700ms">
-                                <div class="media">
-                                    <img src="assets/images/image-box/team-2.jpg" alt="images">                                
-                                </div>
-                                <div class="content"> 
-                                    <div class="sub-title-content">Bixos Manager</div>                                
-                                    <h3 ><a href="team.php">Noah Oliver Elijah</a></h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6">
-                            <div class="team-box grid-post wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1900ms">
-                                <div class="media">
-                                    <img src="assets/images/image-box/team-3.jpg" alt="images">                                
-                                </div>
-                                <div class="content"> 
-                                    <div class="sub-title-content">Bixos Founder</div>                                
-                                    <h3 ><a href="team.php">Liam Olivia Emma</a></h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6">
-                            <div class="team-box grid-post wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1900ms">
-                                <div class="media">
-                                    <img src="assets/images/image-box/team-4.jpg" alt="images">                                
-                                </div>
-                                <div class="content"> 
-                                    <div class="sub-title-content">Bixos Founder</div>                                
-                                    <h3 ><a href="team.php">William Ames Benjamin</a></h3>
-                                </div>
-                            </div>
-                        </div>
+                        <?php endforeach; ?>     
                     </div>
                 </div>
-            </section>
-            <!-- end of flat -->
+            </section>            
+            <!-- END OF OUR TEAM -->
 
 
 
-             <!-- flat testimonial -->
-                <section class="tf-space flat-testimonial falt-client">
+
+
+
+            <!-- testimonials starts flat work -->
+            <section class="tf-space flat-testimonial home2">
                 <div class="container">
-                    <div class="row">                       
-                        <div class="col-lg-7">
-                            <div class="swiper-container testimonial-slider tf-style carousel-5">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide testimonial-post ">                                       
-                                        <div class="content">                                  
-                                            <h3>Elijah	Charlotte Eva</h3>
-                                            <div class="reviews">
-                                                <span class="star">
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>                       
-                                                </span>
-                                                <span class="review">5 Reviews</span>
-                                            </div>
-                                            <div class="tf-texts">                                              
-                                                <span class="text">Fusce sodales egestas neque, in pulvinar enim ultricies at. Vivamus vitae consequat elit. Praesent lacinia 
-                                                    tincidunt varius. Vestibulum ante ipsum the primis in faucibus orci luctus et ultrices posuere cubilia curae 
-                                                    Integer tincidunt sodales neque pulvinar Praesent lacinia tincidunt varius.
-                                                </span>
-                                                <span class="media-1">
-                                                    <img src="assets/images/icon/testi-2.png" alt="images">                                
-                                                </span> 
-                                                <span class="media-2">
-                                                    <img src="assets/images/icon/testi-1.png" alt="images">                                
-                                                </span>
-                                            </div>                                        
-                                        </div>
-                                    </div>  
-                                    <div class="swiper-slide testimonial-post ">                                       
-                                        <div class="content">                                  
-                                            <h3>Elijah	Charlotte Eva</h3>
-                                            <div class="reviews">
-                                                <span class="star">
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>                       
-                                                </span>
-                                                <span class="review">5 Reviews</span>
-                                            </div>
-                                            <div class="tf-texts">                                              
-                                                <span class="text">Fusce sodales egestas neque, in pulvinar enim ultricies at. Vivamus vitae consequat elit. Praesent lacinia 
-                                                    tincidunt varius. Vestibulum ante ipsum the primis in faucibus orci luctus et ultrices posuere cubilia curae 
-                                                    Integer tincidunt sodales neque pulvinar Praesent lacinia tincidunt varius.
-                                                </span>
-                                                <span class="media-1">
-                                                    <img src="assets/images/icon/testi-2.png" alt="images">                                
-                                                </span> 
-                                                <span class="media-2">
-                                                    <img src="assets/images/icon/testi-1.png" alt="images">                                
-                                                </span>
-                                            </div>                                        
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide testimonial-post ">                                       
-                                        <div class="content">                                  
-                                            <h3>Elijah	Charlotte Eva</h3>
-                                            <div class="reviews">
-                                                <span class="star">
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>                       
-                                                </span>
-                                                <span class="review">5 Reviews</span>
-                                            </div>
-                                            <div class="tf-texts">                                              
-                                                <span class="text">Fusce sodales egestas neque, in pulvinar enim ultricies at. Vivamus vitae consequat elit. Praesent lacinia 
-                                                    tincidunt varius. Vestibulum ante ipsum the primis in faucibus orci luctus et ultrices posuere cubilia curae 
-                                                    Integer tincidunt sodales neque pulvinar Praesent lacinia tincidunt varius.
-                                                </span>
-                                                <span class="media-1">
-                                                    <img src="assets/images/icon/testi-2.png" alt="images">                                
-                                                </span> 
-                                                <span class="media-2">
-                                                    <img src="assets/images/icon/testi-1.png" alt="images">                                
-                                                </span>
-                                            </div>                                        
-                                        </div>
-                                    </div>
-                                </div>                                                                      
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="testi-heading wow fadeInDown" data-wow-delay="0ms" data-wow-duration="500ms">
+                                <div class="tf-sub-title">Our Testimonials</div>
+                                <h2 class="tf-title">What <span class="text-color-3 style-title">[Client]</span> Says?</h2>
                             </div>
-                            <div class="swiper-pagination-testi tf-style"></div>
                         </div>
+                        <div class="col-lg-12">
+                            <div class="swiper-container testimonial-slider carousel-6">
+                                <div class="swiper-wrapper">
+                                    <?php foreach($fetch_testimonials as $testimonial) :?>                                      
+                                        <div class="swiper-slide testimonial-post "> 
+                                            <div class="content">                                                                           
+                                                <div class="reviews-box">
+                                                    <div class="reviews">
+                                                        <h3><?php echo $testimonial-> _name ?></h3>
+                                                        <span class="star">
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>                       
+                                                        </span>
+                                                        <span class="review">5 Reviews</span>
+                                                    </div>
+                                                    <div class="media">
+                                                        <img src="assets/images/image-box/<?php echo $testimonial-> _images ?>" alt="images">                                
+                                                    </div>                                               
+                                                </div>                                               
+                                                <div class="tf-texts">                                              
+                                                    <span class="text"><?php echo $testimonial-> _content ?></span>
+                                                    <span class="media-1">
+                                                        <img src="assets/images/icon/testi-2.png" alt="images">                                
+                                                    </span> 
+                                                    <span class="media-2">
+                                                        <img src="assets/images/icon/testi-1.png" alt="images">                                
+                                                    </span>
+                                                </div>                                        
+                                            </div>
+                                        </div>                                    
+                                    <?php endforeach ; ?>    
+                                </div>
+                                <div class="swiper-pagination"></div>                                        
+                            </div>                          
+                        </div>     
                     </div>
                 </div>
             </section>
-            <!-- end testimonial -->
+            <!-- testimonials end -->
+            
 
 
 
+
+
+
+
+
+            <!-- Carousel for Brands -->
+            <section class="flat-brand">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12 col-md-12">
@@ -429,6 +345,7 @@
                                                 </a>
                                             </div>
                                         </div>
+
                                         <div class="swiper-slide">
                                             <div class="slogan-logo active">
                                                 <a href="#">
@@ -436,6 +353,7 @@
                                                 </a>
                                             </div>
                                         </div>
+
                                         <div class="swiper-slide">
                                             <div class="slogan-logo">
                                                 <a href="#">
@@ -443,6 +361,7 @@
                                                 </a>
                                             </div>
                                         </div>
+
                                         <div class="swiper-slide">
                                             <div class="slogan-logo">
                                                 <a href="#">
@@ -450,6 +369,7 @@
                                                 </a>
                                             </div>
                                         </div>
+
                                         <div class="swiper-slide">
                                             <div class="slogan-logo">
                                                 <a href="#">
@@ -464,5 +384,7 @@
                     </div>
                 </div>
             </section>
+            <!-- Brands end here -->
 
+            
 <?php include("include/footer.php") ?>   

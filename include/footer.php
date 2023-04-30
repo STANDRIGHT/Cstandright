@@ -14,7 +14,7 @@
                                     </div>
                                     <h5 class="text-color-4">Fusce sodales egestas neque, in pulvinar enim ultricies at. 
                                         Vivamus vitae consequat elit. </h5>
-                                    <h4 class="text-color-1">Subscribe To <span class="text-color-3"> Bixos </span> Our Digital Agency.</h4>
+                                    <h4 class="text-color-1">Subscribe To <span class="text-color-3"> CLIFFORD STANDRIGHT </span> Digital Agency.</h4>
                                     <div class="widget-form">
                                         <form action="#" id="subscribe-form" class="form-subscribe-footer">
                                             <div id="subscribe-content" class="footer_input-footer">
@@ -57,10 +57,10 @@
                                             United States Of America 
                                         </li>
                                         <li class="contact-style link-style-4"><a href="mailto:hello.creativemela.com"
-                                            class="meta-mail">hello.creativemela.com</a>
+                                            class="meta-mail">hello.CLIFFORD STANDRIGHT</a>
                                         </li>
                                         <li class="contact-style link-style-4"><a href="tel:012345678"
-                                            class="meta-phone">+55 (121) 234 444</a></li>
+                                            class="meta-phone">+123 (815) 477 9354</a></li>
                                         <li >        
                                             <a href="#"><i class="fab fa-facebook-f"></i></a>
                                             <a href="#"><i class="fab fa-twitter"></i></a>

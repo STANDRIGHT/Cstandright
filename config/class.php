@@ -51,6 +51,19 @@
             return $all_blogs;
         }
 
+        public function testimonials(){
+            //6 make functions for testimonials
+            $testimonaials=$this->prepare("SELECT Tid AS _id, Timages AS _images, Tcontent AS _content, Tname AS _name, created_at AS _created_at FROM ".TBL_TESTIMONIALS." ");
+            $testimonaials->execute();
+
+            //fetch testimonials
+            while($rows=$testimonaials->fetch(PDO:: FETCH_OBJ)){
+                $fetch_testimonials[]=$rows;                
+            }
+
+            return $fetch_testimonials;
+        }
+
 
 
 
