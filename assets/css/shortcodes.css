@@ -823,11 +823,11 @@ video::before {
 
 /* donat progress */
 .progress-bar {
-    margin: 38.5px 0 21px;
+    margin: 10px 0 15px;
 }
 
 .progress-title-holder {
-    padding-bottom: 11px;
+    padding-bottom: 13px;
     position: relative;
 }
 

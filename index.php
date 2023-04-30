@@ -2,59 +2,84 @@
 
 <?php
     // 1 MAKE QUERY FOR HOME TOP
-    $slidquery= $conn->query("SELECT * from home");
-    $slidquery->execute();
-
-    // fetch data
-    $sliders= $slidquery->fetchAll(PDO:: FETCH_OBJ);
+    // print_r($app->getSlide()); die();
+    $sliders=$app->getSlide();
 
 
 
     // 2 MAKE QUERY FOR SERVICES
-    $services= $conn->query("SELECT * from services");
-    $services->execute();
+    $fetch_services=$app->getservice();
 
-    // fetch data
-    // $fetch_services= $services->fetchAll(PDO:: FETCH_OBJ);
-    // print_r($fetch_services);
-    $fetch_services=[];
-    while($row=$services->fetch(PDO:: FETCH_OBJ)){
-        $fetch_services[]=$row; 
-    }
-
-
-
-
+    // USING ANOTHOR METHOD TO DO THIS  WITH WHIILE LOOP
+    // $fetch_services=[];
+    // while($row=$services->fetch(PDO:: FETCH_OBJ)){
+    //     $fetch_services[]=$row; 
+    // }
 
     // 3 MAKE QUERY FOR TEAM
-    $teams= $conn->query("SELECT * from our_team");
-    $teams->execute();
+    $fetch_teams=$app->team();
 
-    // fetch data
-    $fetch_teams= $teams->fetchAll(PDO:: FETCH_OBJ);
-    // print_r($fetch_team);
-    // die();
+    //4 MAKE QUERY FROM RECENT WORKS
+    $fetch_recent=$app->recent_work();
+
+    //5 MAKE QUERY FOR BLOGS
+    $all_blogs=$app->blogs();
 
 
-    // 3 MAKE QUERY FOR TESTIMONIALS
-    $testimonials= $conn->query("SELECT * from testimonials");
+
+    /* HOW TO FETCH A SINGLE COLUMN FROM A TABLE
+    $fetch=$teams->fetchColumn(1); 
+    print_r($fetch);
+    */
+
+
+    // USING WHILE LOOP TO FETCH THE DATA OF OUR TEAM
+    // $allteam = $conn->query("SELECT * FROM our_team");
+    // $allteam->execute();
+
+    // while ($fetch= $allteam->fetch(PDO:: FETCH_OBJ)) {
+    // $fetch_teams[]=$fetch;
+    // } 
+    // print_r($fetch_teams); 
+
+
+
+
+    // 4 MAKE QUERY FOR TESTIMONIALS
+    $testimonials= $db->query("SELECT * from testimonials");
     $testimonials->execute();
 
-    // fetch data
+    // Fetch Data
     $fetch_testimonials= $testimonials->fetchAll(PDO:: FETCH_OBJ);
     // print_r($fetch_team);
     // die();
 
     
 
-    // 3 MAKE QUERY FOR TESTIMONIALS
-    $blogs= $conn->query("SELECT * from blogs");
+    // 5 MAKE QUERY FOR TESTIMONIALS
+    $blogs= $db->query("SELECT * from blogs");
     $blogs->execute();
 
-    // fetch data
-    $all_blogs= $blogs->fetchAll(PDO:: FETCH_OBJ);
+    // Fetch Data
+    // $all_blogs= $blogs->fetchAll(PDO:: FETCH_OBJ);
     // print_r($fetch_team);
     // die();
+
+    //PDO
+    /*if ($blogs->rowcount()>0) {
+        while($blog= $blogs->fetch(PDO:: FETCH_OBJ)){
+            echo "<pre>";
+            print_r($blog->Btitle);
+            echo "<pre>";
+
+        }
+        
+
+    }else{
+        echo "<div style='color:red;'>We don't have any records for you</div>";
+    }*/
+
+    
 
 
 ?>
@@ -73,7 +98,7 @@
                             <div class="swiper-slide">
                             <div class="flat-slider">  <div class="overlay-slider"></div>
                                 <div class="sld-img">
-                                    <img src="assets/images/image-slider/<?php echo $slide->Himages; ?>" alt="img"> 
+                                    <img src="assets/images/image-slider/<?php echo $slide->_img; ?>" alt="img"> 
                                 </div>
                                 <div class="elip-slider">
                                     <!-- <img src="assets/images/image-slider/elip-slider.png" alt="img"> -->
@@ -84,14 +109,14 @@
 
                                 <div class="content">
                                     <div class="heading">
-                                        <h1><?php echo $slide->Htitle. "<br>"; ?> </h1>
-                                        <p><?php echo $slide->Hsubtitle; ?></p>
+                                        <h1><?php echo $slide->_title. "<br>"; ?> </h1>
+                                        <p><?php echo $slide->_subtitle; ?></p>
                                     </div>
 
                                     <div class="button-slider">
-                                        <a href="contact.php?slider<?php echo $slide->Hid ;?>" class="button btn-1"><span>Get In Touch </span></a>
+                                        <a href="contact.php?slider<?php echo $slide->_id ;?>" class="button btn-1"><span>Get In Touch </span></a>
                                         <div class="video-slider">
-                                            <a href="<?php echo $slide->Hyoutube ;?>" class="lightbox-image">
+                                            <a href="<?php echo $slide->youtube ;?>" class="lightbox-image">
                                             <!-- https://www.youtube.com/embed/xC4ze0p0b5Y -->
                                                 <i class="ripple"></i>
                                             </a>
@@ -132,13 +157,13 @@
                                     <?php foreach($fetch_services as $service) :?>
                                         <div class="swiper-slide service-post style-post wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
                                             <div class="media">
-                                                <img src="assets/images/image-box/<?php echo $service->Spng ;?>" alt="images">                                
+                                                <img src="assets/images/image-box/<?php echo $service->png ;?>" alt="Services images">                                
                                             </div>
                                             <div class="content">                                  
-                                                <h3><a href="service-details.php?=id<?php echo $service->Sid ;?>"><?php echo $service->Stitle ;?></a></h3>
-                                                <p><?php echo $service->Sdescription ;?></p>
+                                                <h3><a href="service-details.php?=id<?php echo $service->_Sid ;?>"><?php echo $service->title ;?></a></h3>
+                                                <p><?php echo $service->_description ;?></p>
                                                 <div class="read-more">
-                                                    <a href="service-details.php?=id<?php echo $service->Sid ;?>" class="readmore"></a>
+                                                    <a href="service-details.php?=id<?php echo $service->_Sid ;?>" class="readmore"></a>
                                                 </div>
                                             </div>
                                         </div>
@@ -331,14 +356,14 @@
                         <div class="col-lg-12">
                             <div class="swiper-container work-slider carousel-2">
                                 <div class="swiper-wrapper">
-                                <?php foreach($fetch_services as $service) :?>
+                                <?php foreach($fetch_recent as $recent) :?>
                                     <div class="swiper-slide work-post wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
                                         <div class="media">
-                                            <img src="assets/images/our-services/<?php echo $service->Simages ?>" alt="images">
+                                            <img src="assets/images/our-services/<?php echo $recent->_Rimages ?>" alt="images">
                                         </div>
                                         <div class="content">
-                                            <div class="tags"><span ><?php echo $service->Ssubtitle ?></span></div>                                  
-                                            <h3><a href="recent-work.php?id=<?php echo $service->Sid ?>"><?php echo $service->Stitle ?></a></h3>
+                                            <div class="tags"><span ><?php echo $recent->_Rsub_title ?></span></div>                                  
+                                            <h3><a href="recent-work.php?id=<?php echo $recent->_Rid ?>"><?php echo $recent->_Rtitle ?></a></h3>
                                         </div>
                                     </div>
                                 <?php endforeach ;?>
@@ -417,11 +442,11 @@
                             <div class="col-lg-3 col-md-6">
                             <div class="team-box grid-post wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
                                 <div class="media">
-                                    <img src="assets/images/image-box/<?php echo $teams->OTimages; ?>" alt="images">                                
+                                    <img src="assets/images/image-box/<?php echo $teams->_images; ?>" alt="images">                                
                                 </div>
                                 <div class="content"> 
-                                    <div class="sub-title-content"><?php echo $teams->OTposition; ?></div>                                
-                                    <h3 ><a href="team.php?team=<?php echo $teams->OTid; ?>"><?php echo $teams->OTname; ?></a></h3>
+                                    <div class="sub-title-content"><?php echo $teams->_position; ?></div>                                
+                                    <h3 ><a href="team.php?team=<?php echo $teams->_id; ?>"><?php echo $teams->_name; ?></a></h3>
                                 </div>
                             </div>
                         </div>
@@ -699,17 +724,17 @@
                             <div class="col-lg-4 col-md-4">
                                 <div class="grid-post">
                                     <div class="media">
-                                        <img src="assets/images/image-box/<?php echo $blog->Bimages ?>" alt="images">
-                                        <div class="tags"><?php echo $blog->created_by ?></div>
+                                        <img src="assets/images/image-box/<?php echo $blog->_images ?>" alt="blog image">
+                                        <div class="tags"><?php echo $blog->_created_by ?></div>
                                     </div>
                                     <div class="content">
                                         <div class="meta link-style-3 font">                          
-                                            <a  class="entry-author" href="team.php?team=<?php echo $teams->OTid; ?>"> <?php echo strtoupper($blog->added_by) ?></a> <a class="entry-comment" href="blog-details?blog=<?php echo $blog->Bid ?>"><?php echo $blog->Bcomment ?></a>
+                                            <a  class="entry-author" href="team.php?team=<?php echo $teams->_id; ?>"> <?php echo strtoupper($blog->_added_by) ?></a> <a class="entry-comment" href="blog-details?blog=<?php echo $blog->_id ?>"><?php echo $blog->_comment ?></a>
                                         </div>
-                                        <h3 class="title-item"><a href="blog-details.php?blog=<?php echo $blog->Bid ?>"><?php echo $blog->Btitle ?></a></h3>
-                                        <p><?php echo $blog->Bdescription ?></p>
+                                        <h3 class="title-item"><a href="blog-details.php?blog=<?php echo $blog->_id ?>"><?php echo $blog->_title ?></a></h3>
+                                        <p><?php echo $blog->_description ?></p>
                                         <div class="read-more link-style-3">
-                                            <a href="blog-details.php?blog=<?php echo $blog->Bid ?>" class="readmore">Read More</a>
+                                            <a href="blog-details.php?blog=<?php echo $blog->_id ?>" class="readmore">Read More</a>
                                         </div>
                                     </div>
                                 </div>

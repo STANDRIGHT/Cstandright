@@ -40,8 +40,7 @@
                                 <div class="tf-sub-title">Please Get To Know Us</div>
                                 <h2 class="tf-title">Web Design <span class="text-color-3 style-title">Company</span> in Nigeria.</h2>
                                 
-                                <p class="text" style="font-weight:500; font-size:1.7rem; color: black; text-align: justify; 
-                                font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;" >
+                                <p class="text">
                                 Cstandright is a web design firm based in Abuja, Nigeria. We employ some of Abuja's top web designers. 
                                 The success of enterprises is a cause that our web developers are passionate about. As a result, 
                                 you can rely on us to provide the ideal website for your company. 
@@ -55,16 +54,15 @@
                         </div>
                         
                             <div class="col-lg-6 col-md-7">
-                                <p class="text" style="font-weight:500; font-size:1.7rem; color: black; text-align: justify; 
-                                font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;" >
-                                We help companies, businesses, brands to create a website, tell their story and improve their web presence online.</p>
+                                <p class="text">
+                                We help companies, businesses, brands to create a website, tell their story and improve their web presence online.
+                                </p>
                                 
                                 <div class="media">
                                     <img src="assets/images/image-box/blog-detail-2@2x.jpg" alt="images">                                                       
                                 </div>
 
-                                <p class="text" style="font-weight:500; font-size:1.7rem; color: black; text-align: justify; 
-                                font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;" >
+                                <p class="text">
                                 At Cstandright, we help businesses by creating distinctive websites and developing eCommerce website is what we do also. 
                                 Additionally, we offer search engine optimization (SEO) services with a focus on results. 
                                 In addition, we provide smart online marketing to broaden the audience for your website. 
@@ -82,9 +80,7 @@
                                 <br>
                                 <br>
 
-                                <p class="text" style="font-weight:500; font-size:1.7rem; color: black; text-align: justify; 
-                                font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;" >
-                                Your website will occasionally be updated with the help of our website management services. 
+                                <p>Your website will occasionally be updated with the help of our website management services. 
                                 Working with our experienced web developers in Abuja will undoubtedly be a pleasure. 
                                 You can start by leaving us a brief message on our Contact Us page. 
                                 Soon, we'll be in touch with you! To submit us the details of your project, 
@@ -112,7 +108,7 @@
                                 <div class="progress-box1">
                                     <div class="progress-skill" style="padding-left:30px;">
                                         <div class="couter">
-                                            <div class="chart" data-percent="100">
+                                            <div class="chart" data-percent="95">
                                             <span class="percent">0</span>
                                             </div>
                                         </div>
@@ -138,8 +134,7 @@
                                 
                                
                                 <div class="progress-box2">
-                                    <p class="" style="font-weight:500; font-size:1.5rem; color: black; text-align: justify; 
-                                    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;">
+                                    <p class="">
                                     Work with our  web developers right now. Nigerian businesses frequently turn to Cstandright for their website design requirements. 
                                     This is due to the fact that we are aware of what is required for websites to effectively serve users. 
                                     It's crucial to make sure that your website loads quickly. As a result, we speed up the loading of your website. 
@@ -155,8 +150,7 @@
                                 <img src="assets/images/image-box/trusted-home3.png" alt="images">                                                                          
                             </div><br>   
                             
-                            <p class="" style="font-weight:500; font-size:1.6rem; color: #4e4e4e; text-align: justify; 
-                            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;">
+                            <p class="">
                             Above all, we adopt tactics that emphasize a positive user experience. Similar to this, 
                             we use careful information architecture when structuring online material. 
                             Also, we make sure that every website we create is mobile-friendly. 

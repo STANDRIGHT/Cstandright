@@ -2,7 +2,7 @@
 
 define("BASEURL", "http://localhost/BACKEND%20WEBSITE%20BUILDER/@cstandright_website/");
 session_start();
-include dirname(dirname(__FILE__)) . "/Config/conn.php";
+include dirname(dirname(__FILE__)) . "/Config/init.php";
 
 // echo __DIR__; 
 // echo dirname(__DIR__);
