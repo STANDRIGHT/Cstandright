@@ -147,10 +147,10 @@
                                                 <img src="assets/images/image-box/<?php echo $service->png ;?>" alt="Services images">                                
                                             </div>
                                             <div class="content">                                  
-                                                <h3><a href="service-details.php?=id<?php echo $service->_Sid ;?>"><?php echo $service->title ;?></a></h3>
+                                                <h3><a href="service-details.php?id=<?php echo $service->_Sid ;?>"><?php echo $service->title ;?></a></h3>
                                                 <p><?php echo $service->_description ;?></p>
                                                 <div class="read-more">
-                                                    <a href="service-details.php?=id<?php echo $service->_Sid ;?>" class="readmore"></a>
+                                                    <a href="service-details.php?id=<?php echo $service->_Sid ;?>" class="readmore"></a>
                                                 </div>
                                             </div>
                                         </div>
@@ -197,7 +197,7 @@
                             </div>
                             <h3 class="text-color-3">Are you a business owner and your looking to create a corporate website?</h3>
                             <p>Our team has successfully developed various advanced websites and graphics designs
-                                being used in various multi-level business processes. Cstandright has gained the experience 
+                                being used in various multi-level business processes.<?= config::Company["name"]; ?> has gained the experience 
                                 and now become one of the best software development firm so far.</p>
                             
                             <!-- PROGRESS BAR STARTS -->
@@ -490,7 +490,7 @@
                                     <h5 class="toggle-title">Can I pay for my website design project in installments?<span class="btn-toggle"></span>
                                     </h5>
                                     <div class="toggle-content section-desc">
-                                        <p>You can, indeed. On web design projects, Cstandright accepts up to three payments in installments. 
+                                        <p>You can, indeed. On web design projects, <?= config::Company["name"] ;?> accepts up to three payments in installments. 
                                             However, the project's cost will determine this.</p>
                                     </div>
                                 </div>
@@ -515,7 +515,8 @@
                                     </div>
                                 </div>
 
-                            </div>                            
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -628,72 +629,6 @@
 
 
 
-            <!-- flat blog (BLOG PAGE STARTS) -->            
-            <section class="flat-blog-grid style-blog">
-                <!-- <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="blog-heading wow fadeInDown" data-wow-delay="0ms" data-wow-duration="500ms">
-                                <div class="tf-sub-title">News & Blogs</div>
-                                <h2 class="tf-title">LATEST <span class="text-color-3 style-title">[News]</span> & ARTICLES</h2>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4">
-                            <div class="grid-post">
-                                <div class="media">
-                                    <img src="assets/images/image-box/blog-1.jpg" alt="images">
-                                    <div class="tags">01 - Sep - 2022</div>
-                                </div>
-                                <div class="content">
-                                    <div class="meta link-style-3 font">                          
-                                        <a  class="entry-author" href="team.php"> Admin</a> <a class="entry-comment" href="blog.php">0 Comments</a>
-                                    </div>
-                                    <h3 class="title-item"><a href="blog-details.php">Standard Size Of Business Agency Consulating Management.</a></h3>
-                                    <div class="read-more link-style-5">
-                                        <a href="blog-details.php" class="readmore">Read More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4">
-                            <div class="grid-post style-blog">
-                                <div class="media">
-                                    <img src="assets/images/image-box/blog-2.jpg" alt="images">
-                                    <div class="tags">01 - Sep - 2022</div>
-                                </div>
-                                <div class="content">
-                                    <div class="meta link-style-3 font">                          
-                                        <a  class="entry-author " href="team.php"> Admin</a> <a class="entry-comment" href="blog.php">0 Comments</a>
-                                    </div>
-                                    <h3 class="title-item"><a href="blog-details.php">Standard Size Of Business Agency Consulating Management.</a></h3>
-                                    <div class="read-more link-style-5">
-                                        <a href="blog-details.php" class="readmore">Read More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4">
-                            <div class="grid-post">
-                                <div class="media">
-                                    <img src="assets/images/image-box/blog-3.jpg" alt="images">
-                                    <div class="tags">01 - Sep - 2022</div>
-                                </div>
-                                <div class="content">
-                                    <div class="meta link-style-3 font">                          
-                                        <a  class="entry-author " href="team.php"> Admin</a> <a class="entry-comment" href="blog.php">0 Comments</a>
-                                    </div>
-                                    <h3 class="title-item"><a href="blog-details.php">Standard Size Of Business Agency Consulating Management.</a></h3>
-                                    <div class="read-more link-style-5">
-                                        <a href="blog-details.php" class="readmore">Read More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>                      
-                    </div>
-                    <div class="blog-button"><a href="blog-grid.php" class="button btn-style2 btn-1"><span>View All Blogs </span></a></div>
-                </div> -->
-            </section>            
-            <!-- END OF BLOG PAGE -->
 
             <!-- OUR MAIN BLOG PAGE STARTS HERE  -->
             <section class="tf-space flat-blog-grid home03">
@@ -711,13 +646,13 @@
                                 <div class="grid-post">
                                     <div class="media">
                                         <img src="assets/images/image-box/<?php echo $blog->_images ?>" alt="blog image">
-                                        <div class="tags"><?php echo $blog->_created_by ?></div>
+                                        <div class="tags"><?php echo  $blog->_created_by ?></div>
                                     </div>
                                     <div class="content">
                                         <div class="meta link-style-3 font">                          
-                                            <a  class="entry-author" href="team.php?team=<?php echo $teams->_id; ?>"> <?php echo strtoupper($blog->_added_by) ?></a> <a class="entry-comment" href="blog-details?blog=<?php echo $blog->_id ?>"><?php echo $blog->_comment ?></a>
+                                            <a  class="entry-author" href="team.php?blog=<?php echo $blog->_id; ?>"> <?php echo strtoupper($blog->_added_by) ?></a> <a class="entry-comment" href="blog-details?blog=<?php echo $blog->_id ?>"><?php echo $blog->_comment ?></a>
                                         </div>
-                                        <h3 class="title-item"><a href="blog-details.php?blog=<?php echo $blog->_id ?>"><?php echo $blog->_title ?></a></h3>
+                                        <h3 class="title-item" style="font-size:1.8rem;"><a href="blog-details.php?blog=<?php echo $blog->_id ?>"><?php echo $blog->_title ?></a></h3>
                                         <p><?php echo $blog->_description ?></p>
                                         <div class="read-more link-style-3">
                                             <a href="blog-details.php?blog=<?php echo $blog->_id ?>" class="readmore">Read More</a>
@@ -728,62 +663,13 @@
                         <?php endforeach ;?>
 
                     </div>
-                    <div class="blog-button"><a href="blog-grid.php" class="button btn-style2 btn-1"><span>View All Blogs </span></a></div>
+                    <div class="blog-button"><a href="blog.php" class="button btn-style2 btn-1"><span>View All Blogs </span></a></div>
                 </div>
             </section>
             <!-- MAIN BLOG PAGE END'S HERE -->
 
 
-            <!-- flat brand (BRAND AND PARTNERS LOGO) -->
-            <section class="flat-brand-1">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12">
-                            <div class="brand-slider">
-                                <div class="swiper-container carousel-3">
-                                    <div class="swiper-wrapper">
-                                        <div class="swiper-slide">
-                                            <div class="slogan-logo">
-                                                <a href="#">
-                                                    <img src="assets/images/image-box/slogan-01.png" alt="images">
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="slogan-logo active">
-                                                <a href="#">
-                                                    <img src="assets/images/image-box/slogan-01.png" alt="images">
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="slogan-logo">
-                                                <a href="#">
-                                                    <img src="assets/images/image-box/slogan-01.png" alt="images">
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="slogan-logo">
-                                                <a href="#">
-                                                    <img src="assets/images/image-box/slogan-01.png" alt="images">
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="slogan-logo">
-                                                <a href="#">
-                                                    <img src="assets/images/image-box/slogan-01.png" alt="images">
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- END flat brand (BRAND AND PARTNERS LOGO) -->
+
+         
 
 <?php include("include/footer.php") ?>                

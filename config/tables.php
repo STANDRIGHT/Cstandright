@@ -16,3 +16,6 @@ const TBL_RECENT_WORKS ="recent_works";
 
 //tables for testimonials
 const TBL_TESTIMONIALS ="testimonials";
+
+//tables for testimonials
+const TBL_SERVICE_LIST ="_servicelist";

@@ -2,6 +2,39 @@
 
  <!-- Footer -->
 
+
+
+   <!-- flat brand (BRAND AND PARTNERS LOGO) -->
+   <section class="flat-brand-1">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12">
+                            <div class="brand-slider">
+                                <div class="swiper-container carousel-2">
+                                    <div class="swiper-wrapper">
+                                    <?php for($x =1; $x <=22; $x++) :?>
+                                        <div class="swiper-slide">
+                                            <div class="slogan-logo">
+                                                <a href="#">
+                                                    <img src="assets/images/associates/<?php echo $x ?>.svg" alt="Images">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <?php endfor ;?>                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+    <!-- END flat brand (BRAND AND PARTNERS LOGO) -->
+
+
+
+
+
+
 <footer id="footer" class="clearfix">
                     <div id="footer-widgets" class="container">
                         <div class="row">

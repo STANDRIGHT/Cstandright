@@ -34,7 +34,7 @@
                                 <div class="breadcrumbs">
                                     <h1>About Us<span class="style-color">.</span></h1>
                                     <div class="breadcrumb-trail link-style-2">
-                                        <a class="home" href="index-2.php">Home Page</a><span>About Us</span>
+                                        <a class="home" href="index.php.">Home Page</a><span>About Us</span>
                                     </div>
                                 </div>                                                           
                             </div>                          
@@ -55,9 +55,11 @@
                             <div class="and-heading">
                                 <div class="tf-sub-title">Please Get To Know Us</div>
                                 <h2 class="tf-title">Web Design <span class="text-color-3 style-title">Company</span> in Nigeria.</h2>
+                                <!-- <h2 class="tf-title">No big egos here, <span class="text-color-3 style-title">just a group of passionate</span> and determined people looking to create fantastic work.</h2> -->
+
                                 
                                 <p class="text">
-                                Cstandright is a web design firm based in Abuja, Nigeria. We employ some of Abuja's top web designers. 
+                                <?=config::Company["name"] ;?> is a web design firm based in Abuja, Nigeria. We employ some of Abuja's top web designers. 
                                 The success of enterprises is a cause that our web developers are passionate about. As a result, 
                                 you can rely on us to provide the ideal website for your company. 
                                 We stick with you even though many web designers would leave after creating a website. 
@@ -79,10 +81,10 @@
                                 </div>
 
                                 <p class="text">
-                                At Cstandright, we help businesses by creating distinctive websites and developing eCommerce website is what we do also. 
+                                At <?=config::Company["name"] ;?>, we help businesses by creating distinctive websites and developing eCommerce website is what we do also. 
                                 Additionally, we offer search engine optimization (SEO) services with a focus on results. 
                                 In addition, we provide smart online marketing to broaden the audience for your website. 
-                                Therefore, Cstandright is the web design firm for you, no matter what type of business you have. 
+                                Therefore, <?=config::Company["name"] ;?> is the web design firm for you, no matter what type of business you have. 
                                 We employ some of Nigeria's top web designers. Additionally, 
                                 they are constantly prepared to assist you in expanding your firm.</p>
                                 
@@ -117,8 +119,8 @@
                         <div class="col-lg-6 col-md-7">
                             <div class="skill-heading">
                                 <div class="tf-sub-title">We Help you Grow your Business</div>
-                                <h2 class="tf-title">Abuja-based  <span class="text-color-3 style-title">web</span> developers.</h2>
-                                <p>We are Nigeria’s trusted website design company located in Abuja. We provide top-notch Corporate 
+                                <h2 class="tf-title">Where  <span class="text-color-3 style-title"> creativity  </span> and craft co-exist.</h2>
+                                <p>We are trusted website design company located in Abuja. We provide top-notch Corporate 
                                     and eCommerce web design services to indeviduals, businesses and organizations...</p>
                                 
                                 <div class="progress-box1">
@@ -151,7 +153,7 @@
                                
                                 <div class="progress-box2">
                                     <p class="">
-                                    Work with our  web developers right now. Nigerian businesses frequently turn to Cstandright for their website design requirements. 
+                                    Work with our  web team right now. Many businesses frequently turn to <?=config::Company["name"] ;?> for their website design requirements. 
                                     This is due to the fact that we are aware of what is required for websites to effectively serve users. 
                                     It's crucial to make sure that your website loads quickly. As a result, we speed up the loading of your website. 
                                     Additionally, we optimize for search engines to make sure people can quickly locate your website. 
@@ -202,7 +204,7 @@
                                                 <img src="assets/images/image-box/<?php echo $services->png ?>" alt="images">                                
                                             </div>
                                             <div class="content">                                  
-                                                <h3><a href="service-details.php?=id<?php echo $services->_Sid ?>"><?php echo $services->title ?></a></h3>                                        
+                                                <h3><a href="service-details.php?id=<?php echo $services->_Sid ?>"><?php echo $services->title ?></a></h3>                                        
                                             </div>
                                         </div>
                                     <?php endforeach ; ?>                                    
@@ -223,7 +225,10 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-12">
-                                <div class="title">We want to provide you a Qualitative Service.</div>
+                                <!-- <h2 class="tf-title text-center">We want to provide you a Qualitative Service</h2> -->
+                                <div class="" style="color:white; font-size:6rem; text-align:center; font-weight:700;">
+                                     We want to provide you a Qualitative Service.
+                                </div>
                             </div>   
                         </div>
                     </div>
@@ -311,9 +316,12 @@
                                                     </span>
                                                 </div>                                        
                                             </div>
-                                        </div>                                    
+                                        </div>                                                                            
                                     <?php endforeach ; ?>    
                                 </div>
+                                    <br><br>
+                                    <!-- <div class="blog-button center"><a href="blog-grid.php" class="button btn-style2 btn-1 "><span>View All Blogs </span></a></div> -->
+                                    <div class="button-case center"><a href="testimonials.php" class="button btn-style2 btn-1"><span>View All </span></a></div>      
                                 <div class="swiper-pagination"></div>                                        
                             </div>                          
                         </div>     
@@ -329,62 +337,7 @@
 
 
 
-
-            <!-- Carousel for Brands -->
-            <section class="flat-brand">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12">
-                            <div class="brand-slider">
-                                <div class="swiper-container carousel-3">
-                                    <div class="swiper-wrapper">
-                                        <div class="swiper-slide">
-                                            <div class="slogan-logo">
-                                                <a href="#">
-                                                    <img src="assets/images/image-box/slogan.png" alt="images">
-                                                </a>
-                                            </div>
-                                        </div>
-
-                                        <div class="swiper-slide">
-                                            <div class="slogan-logo active">
-                                                <a href="#">
-                                                    <img src="assets/images/image-box/slogan.png" alt="images">
-                                                </a>
-                                            </div>
-                                        </div>
-
-                                        <div class="swiper-slide">
-                                            <div class="slogan-logo">
-                                                <a href="#">
-                                                    <img src="assets/images/image-box/slogan.png" alt="images">
-                                                </a>
-                                            </div>
-                                        </div>
-
-                                        <div class="swiper-slide">
-                                            <div class="slogan-logo">
-                                                <a href="#">
-                                                    <img src="assets/images/image-box/slogan.png" alt="images">
-                                                </a>
-                                            </div>
-                                        </div>
-
-                                        <div class="swiper-slide">
-                                            <div class="slogan-logo">
-                                                <a href="#">
-                                                    <img src="assets/images/image-box/slogan.png" alt="images">
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- Brands end here -->
+                    <br><br>
 
             
 <?php include("include/footer.php") ?>   

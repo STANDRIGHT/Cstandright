@@ -3,6 +3,8 @@
 define("BASEURL", "http://localhost/BACKEND%20WEBSITE%20BUILDER/@cstandright_website/");
 session_start();
 include dirname(dirname(__FILE__)) . "/Config/init.php";
+include dirname(dirname(__FILE__)) . "/config/define.php";
+// include "../config/define.php";
 
 // echo __DIR__; 
 // echo dirname(__DIR__);
@@ -48,14 +50,16 @@ include dirname(dirname(__FILE__)) . "/Config/init.php";
         <script src="javascript/respond.min.js"></script>
     <![endif]-->
 
+    
+
 </head>
 
 <body class="header-fixed counter-scroll">
 
      <!-- preloader -->
-        <!-- <div class="preload preload-container">
+        <div class="preload preload-container">
             <div class="preload-logo"></div>
-        </div> -->
+        </div>
     <!-- /preloader -->
 
     <div id="wrapper" class="animsition">
@@ -81,18 +85,18 @@ include dirname(dirname(__FILE__)) . "/Config/init.php";
                             <div class="wrap-inner clearfix">
                                 <nav id="main-nav" class="main-nav">
                                     <ul id="menu-primary-menu" class="menu">
-                                        <li class="menu-item"> <a href="index.php">Home</a></li>
-                                        <li class="menu-item"><a href="about-us.php">About Us </a></li>
-                                        <li class="menu-item"><a href="services.php">Services</a> </li>                            
+                                        <li class="menu-item"> <a href="index">Home</a></li>
+                                        <li class="menu-item"><a href="about-us">About Us </a></li>
+                                        <li class="menu-item"><a href="services">Services</a> </li>                            
 
                                         <li class="menu-item menu-item-has-children"><a>Pages </a>
                                             <ul class="sub-menu">
-                                                <li class="menu-item"> <a href="team.php">Our Team</a> </li>
-                                                <li class="menu-item"><a href="testimonials.php">Testimonials</a></li>
+                                                <li class="menu-item"> <a href="team">Our Team</a> </li>
+                                                <li class="menu-item"><a href="testimonials">Testimonials</a></li>
                                             </ul>
                                         </li>
-                                        <li class="menu-item"><a href="blog-grid.php">Blog</a></li>
-                                        <li class="menu-item"><a href="contact.php">Contact</a></li>
+                                        <li class="menu-item"><a href="blog">Blog</a></li>
+                                        <li class="menu-item"><a href="contact">Contact</a></li>
                                     </ul>
                                 </nav>
                                 <!-- /#main-nav -->

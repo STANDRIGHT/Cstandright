@@ -33,7 +33,7 @@
                                 <div class="breadcrumbs">
                                     <h1>Case Details<span class="style-color">.</span></h1>
                                     <div class="breadcrumb-trail link-style-2">
-                                        <a class="home" href="index-2.php">Home Page</a><span>Case Details</span>
+                                        <a class="home" href="index.php">Home Page</a><span>Case Details</span>
                                     </div>
                                 </div>                                                           
                             </div>                          
@@ -252,55 +252,4 @@
                     </div>
                 </div>
             </section>
-
-            <section class="flat-brand flat-item">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12">
-                            <div class="brand-slider">
-                                <div class="swiper-container carousel-3">
-                                    <div class="swiper-wrapper">
-                                        <div class="swiper-slide">
-                                            <div class="slogan-logo">
-                                                <a href="#">
-                                                    <img src="assets/images/image-box/slogan-01.png" alt="images">
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="slogan-logo active">
-                                                <a href="#">
-                                                    <img src="assets/images/image-box/slogan-01.png" alt="images">
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="slogan-logo">
-                                                <a href="#">
-                                                    <img src="assets/images/image-box/slogan-01.png" alt="images">
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="slogan-logo">
-                                                <a href="#">
-                                                    <img src="assets/images/image-box/slogan-01.png" alt="images">
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="slogan-logo">
-                                                <a href="#">
-                                                    <img src="assets/images/image-box/slogan-01.png" alt="images">
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
             <?php include("include/footer.php") ?>   

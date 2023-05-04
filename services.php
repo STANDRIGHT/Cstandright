@@ -1,5 +1,26 @@
 <?php include("include/header.php") ?>   
 
+<?php 
+
+
+    // 2 MAKE QUERY FOR SERVICES
+    $fetch_services=$app->getservice();
+
+
+    // 3 MAKE QUERY FOR TEAM
+    $fetch_teams=$app->team();
+
+
+    // 6 MAKE QUERY FOR TESTIMONIALS
+    $fetch_testimonials=$app->testimonials();
+
+
+    
+    //9 FUNCTION for DETAILS_LIST
+    $Sdetails_list=$app->Sdetails_list();
+    // print_r($Sdetails);
+
+?>
                 <!-- <header>
                         <div class="icon-header">
                             <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -14,7 +35,7 @@
                         <div class="tf-button"><a href="contact.php" class="button btn-1"><span>Get A Quote </span></a></div>   
                 </header> -->
 
-                <!-- /#site-header -->
+            <!-- /#site-header -->
                 <section class="flat-title-page"><div class="overlay-page"></div>
                     <div class="elip-header">
                         <img src="assets/images/mark-page/ab-header.png" alt="img">
@@ -34,191 +55,131 @@
                                 <div class="breadcrumbs">
                                     <h1>Service Page<span class="style-color">.</span></h1>
                                     <div class="breadcrumb-trail link-style-2">
-                                        <a class="home" href="index-2.php">Home Page</a><span>Service Page</span>
+                                        <a class="home" href="index.php">Home Page</a><span>Service Page</span>
                                     </div>
                                 </div>                                                            
                             </div>                          
                         </div>
                     </div>
                 </section>
-            </div>
             <!-- #site-header-wrap -->
 
 
             <!-- services card with side search procedure -->
-            <div class="tf-space flat-work flat-case flat-blog-details page">
-                <div class="container">
-                    <div class="row"> 
-                        <div class="col-lg-8 col-md-12">                  
-                            <div class="work-wrap">                               
-                                <div class="work-post item1 wow fadeInUp" data-wow-delay="0ms" data-wow-duration="500ms">
-                                    <div class="media">
-                                        <img src="assets/images/image-box/work-page-1.jpg" alt="images">                                
-                                    </div>
-                                    <div class="content">
-                                        <div class="tags"><span >Web Design</span></div>                                  
-                                        <h3><a href="case-details.php">Digital Marketing Onboarding</a></h3>
-                                    </div>
-                                </div>                                                        
-                            </div>                           
-                            <div class="work-wrap">                             
-                                <div class="work-post item2 wow fadeInUp" data-wow-delay="0ms" data-wow-duration="500ms">
-                                    <div class="media">
-                                        <img src="assets/images/image-box/work-page-2.jpg" alt="images">                                
-                                    </div>
-                                    <div class="content">
-                                        <div class="tags"><span >Web Design</span></div>                                  
-                                        <h3><a href="case-details.php">Digital Marketing Onboarding</a></h3>
-                                    </div>
-                                </div>                                                                                       
-                            </div>  
-                            <div class="work-wrap">                               
-                                <div class="work-post item1 wow fadeInUp" data-wow-delay="0ms" data-wow-duration="500ms">
-                                    <div class="media">
-                                        <img src="assets/images/image-box/work-page-4.jpg" alt="images">                                
-                                    </div>
-                                    <div class="content">
-                                        <div class="tags"><span >Web Design</span></div>                                  
-                                        <h3><a href="case-details.php">Digital Marketing Onboarding</a></h3>
-                                    </div>
-                                </div>                                                        
-                            </div>                           
-                            <div class="work-wrap">                             
-                                <div class="work-post item2 wow fadeInUp" data-wow-delay="0ms" data-wow-duration="500ms">
-                                    <div class="media">
-                                        <img src="assets/images/image-box/work-page-5.jpg" alt="images">                                
-                                    </div>
-                                    <div class="content">
-                                        <div class="tags"><span >Web Design</span></div>                                  
-                                        <h3><a href="case-details.php">Digital Marketing Onboarding</a></h3>
-                                    </div>
-                                </div>                                                                                       
-                            </div> 
-                            <div class="work-wrap">                               
-                                <div class="work-post item1 wow fadeInUp" data-wow-delay="0ms" data-wow-duration="500ms">
-                                    <div class="media">
-                                        <img src="assets/images/image-box/work-page-7.jpg" alt="images">                                
-                                    </div>
-                                    <div class="content">
-                                        <div class="tags"><span >Web Design</span></div>                                  
-                                        <h3><a href="case-details.php">Digital Marketing Onboarding</a></h3>
-                                    </div>
-                                </div>                                                        
-                            </div>                           
-                            <div class="work-wrap">                             
-                                <div class="work-post item2 wow fadeInUp" data-wow-delay="0ms" data-wow-duration="500ms">
-                                    <div class="media">
-                                        <img src="assets/images/image-box/work-page-8.jpg" alt="images">                                
-                                    </div>
-                                    <div class="content">
-                                        <div class="tags"><span >Web Design</span></div>                                  
-                                        <h3><a href="case-details.php">Digital Marketing Onboarding</a></h3>
-                                    </div>
-                                </div>                                                                                       
-                            </div>                                                                                                
-                        </div>
-                            <div class="col-lg-4 col-md-12">
-                                <aside class="side-bar">
-                                    <div class="inner-side-bar">                                           
-                                        <div class="widget search">
-                                            <div class="widget-title">
-                                                <h3>Search Here</h3>                                       
+                <div class="tf-space flat-work flat-case flat-blog-details page">
+                    <div class="container">
+                        <div class="row"> 
+                            <div class="col-lg-8 col-md-12">    
+                            <?php foreach($fetch_services as $service) :?>
+
+                                <div class="work-wrap">  
+                                        <div class="work-post item1 wow fadeInUp" data-wow-delay="0ms" data-wow-duration="500ms">
+                                            <div class="media">
+                                                <img src="assets/images/services_details/<?php echo $service->images ?>" alt="services images">                                
                                             </div>
-                                            <form action="#" method="get" role="search" class="search-form">
-                                                <input type="search" class="search-field"
-                                                    placeholder="Enter Your Keyword..." value="" name="s"
-                                                    title="Search for" required="">
-                                                <button class="search-icon search-submit" type="submit" title="Search"></button>
-                                            </form>
+                                            <div class="content">
+                                                <div class="tags"><span ><?php echo $service->subtitle ?></span></div>                                  
+                                                <h3><a href="service-details.php?id=<?php echo $service->_Sid ?>"><?php echo $service->title ?></a></h3>
+                                            </div>
                                         </div>
-                                        <div class="widget widget-categories"> 
-                                            <div class="widget-title item">
-                                                    <h3>Category</h3>  
-                                            </div>                                                                                                                        
-                                            <ul>
-                                                <li>
-                                                    <a href="case-study.php">UX strategy</a>
-                                                </li>
-                                                <li class="active">
-                                                    <a href="case-study.php">Information architecture</a>
-                                                </li>
-                                                <li>
-                                                    <a href="case-study.php">Prototyping</a>
-                                                </li>
-                                                <li>
-                                                    <a href="case-study.php">Wireframing</a>
-                                                </li>
-                                                <li>
-                                                    <a href="case-study.php">UI Design</a>
-                                                </li>
-                                                <li>
-                                                    <a href="case-study.php">Figma Design</a>
-                                                </li>
-                                                <li>
-                                                    <a href="case-study.php">XD Design</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="widget-title item">
-                                            <h3>Recent Posts</h3>
-                                        </div>                                                                
-                                        <ul class="widget recent-news">
-                                            <li>
-                                                <div class="thumb ">
-                                                    <img src="assets/images/image-box/recent-post-01.png" alt="images">
-                                                </div>
-                                                <div class="texts grid-post">
-                                                    <div class="title-item text-color-3">                          
-                                                        Web Design
-                                                    </div>
-                                                    <h5><a href="case-study.php">Digital Marketing Advertise Onboarding</a></h5>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="thumb">
-                                                    <img src="assets/images/image-box/recent-post-06.png" alt="images">
-                                                </div>
-                                                <div class="texts grid-post">
-                                                    <div class="title-item text-color-3">                          
-                                                        Web Design
-                                                    </div>
-                                                    <h5><a href="case-study.php">Digital Marketing Advertise Onboarding</a></h5>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="thumb">
-                                                    <img src="assets/images/image-box/recent-post-07.png" alt="images">
-                                                </div>
-                                                <div class="texts grid-post">
-                                                    <div class="title-item text-color-3">                          
-                                                        Web Design
-                                                    </div>
-                                                    <h5><a href="case-study.php">Digital Marketing Advertise Onboarding</a></h5>
-                                                </div>
-                                            </li>
-                                            <li class="flat">
-                                                <div class="thumb">
-                                                    <img src="assets/images/image-box/recent-post-08.png" alt="images">
-                                                </div>
-                                                <div class="texts grid-post">
-                                                    <div class="title-item text-color-3">                          
-                                                        Web Design
-                                                    </div>
-                                                    <h5><a href="case-study.php">Digital Marketing Advertise Onboarding</a></h5>                                              
-                                                </div>
-                                            </li>
-                                        </ul>                                     
-                                    </div>
-                                </aside>
+                                </div>                                 
+                                <?php endforeach ;?>                                                        
                             </div>
+                                
+                                <div class="col-lg-4 col-md-12">
+                                    <aside class="side-bar">
+                                        <div class="inner-side-bar">                                           
+                                            <div class="widget search">
+                                                <div class="widget-title">
+                                                    <h3>Search Here</h3>                                       
+                                                </div>
+                                                <form action="#" method="get" role="search" class="search-form">
+                                                    <input type="search" class="search-field"
+                                                        placeholder="Enter Your Keyword..." value="" name="s"
+                                                        title="Search for" required="">
+                                                    <button class="search-icon search-submit" type="submit" title="Search"></button>
+                                                </form>
+                                            </div>
+
+                                    <!--Widget-categories-->
+                                    <div class="widget widget-categories"> 
+                                        <div class="widget-title item">
+                                            <h3>Services List</h3>  
+                                        </div>                                                                                                                        
+                                        <ul>
+                                            <?php foreach($Sdetails_list as $Sdetail) :?>
+                                                <li >
+                                                    <a class="<?php //if($SLid==){}?>" href="service-details-list.php?SLid=<?php echo $Sdetail->SLid; ?>"><?php echo $Sdetail->SLname; ?></a> 
+                                                </li>
+                                            
+                                                <li class="tf-style">
+                                                    <!-- <a href="services.php">XD Design</a> -->
+                                                </li>
+                                            <?php endforeach ;?>                                                        
+                                        </ul>
+                                    </div>
+                                    <!--End Widget-categories-->
+
+
+
+                                            <div class="widget-title item">
+                                                <h3>Recent Posts</h3>
+                                            </div>                                                                
+                                            <ul class="widget recent-news">
+                                                <li>
+                                                    <div class="thumb ">
+                                                        <img src="assets/images/image-box/recent-post-01.png" alt="images">
+                                                    </div>
+                                                    <div class="texts grid-post">
+                                                        <div class="title-item text-color-3">                          
+                                                            Web Design
+                                                        </div>
+                                                        <h5><a href="case-study.php">Digital Marketing Advertise Onboarding</a></h5>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="thumb">
+                                                        <img src="assets/images/image-box/recent-post-06.png" alt="images">
+                                                    </div>
+                                                    <div class="texts grid-post">
+                                                        <div class="title-item text-color-3">                          
+                                                            Web Design
+                                                        </div>
+                                                        <h5><a href="case-study.php">Digital Marketing Advertise Onboarding</a></h5>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="thumb">
+                                                        <img src="assets/images/image-box/recent-post-07.png" alt="images">
+                                                    </div>
+                                                    <div class="texts grid-post">
+                                                        <div class="title-item text-color-3">                          
+                                                            Web Design
+                                                        </div>
+                                                        <h5><a href="case-study.php">Digital Marketing Advertise Onboarding</a></h5>
+                                                    </div>
+                                                </li>
+                                                <li class="flat">
+                                                    <div class="thumb">
+                                                        <img src="assets/images/image-box/recent-post-08.png" alt="images">
+                                                    </div>
+                                                    <div class="texts grid-post">
+                                                        <div class="title-item text-color-3">                          
+                                                            Web Design
+                                                        </div>
+                                                        <h5><a href="case-study.php">Digital Marketing Advertise Onboarding</a></h5>                                              
+                                                    </div>
+                                                </li>
+                                            </ul>                                     
+                                        </div>
+                                    </aside>
+                                </div>
+                            </div>
+                            <!-- <div class="button-case center"><a href="service-details.php" class="button btn-style2 btn-1"><span>View All </span></a></div>       -->
                         </div>
-                        <div class="button-case center"><a href="case-study.php" class="button btn-style2 btn-1"><span>View All </span></a></div>      
                     </div>
                 </div>
-            </div>
             <!-- services card with side search procedure -->
-
-
 
 
             <!-- work done for client -->
@@ -228,113 +189,140 @@
                         <div class="col-lg-3 col-md-6">
                             <div class="counter-box">
                                 <div class="content wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
-                                    <div class="number number-style" data-speed="2000" data-to="12" data-inviewport="yes">12</div>
-                                    <h3 class="heading">Our Active Member</h3>
+                                    <!-- <div class="number number-style" data-speed="2000" data-to="12" data-inviewport="yes">12</div> -->
+                                    <div class="number" data-speed="2000" data-to="97" data-inviewport="yes">0</div>
+                                    <h3 class="heading">Happy Clients</h3>
                                     <div class="mark "></div>
                                 </div>                                
                             </div>
                         </div>
+
                         <div class="col-lg-3 col-md-6">
                             <div class="counter-box">
                                 <div class="content wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
-                                    <div class="number number-style number-one" data-speed="2000" data-to="1" data-inviewport="yes">15</div>
+                                    <!-- <div class="number number-style number-one" data-speed="2000" data-to="1" data-inviewport="yes">15</div> -->
+                                    <div class="number" data-speed="2000" data-to="100" data-inviewport="yes">100</div>
                                     <h3 class="heading">Our Total Project</h3>
                                     <div class="mark"></div>
                                 </div>                                
                             </div>
                         </div>
+
                         <div class="col-lg-3 col-md-6">
                             <div class="counter-box">
                                 <div class="content wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
-                                    <div class="number" data-speed="2000" data-to="14" data-inviewport="yes">14</div>
+                                    <div class="number" data-speed="2000" data-to="3" data-inviewport="yes">3</div>
                                     <h3 class="heading">Our Winning Award</h3>
                                     <div class="mark mark-style"></div>
                                 </div>                                
                             </div>
                         </div>
+                        
                         <div class="col-lg-3 col-md-6">
                             <div class="counter-box">
                                 <div class="content wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
-                                    <div class="number" data-speed="2000" data-to="50" data-inviewport="yes">50</div>
+                                    <div class="number" data-speed="2000" data-to="10" data-inviewport="yes">10</div>
                                     <h3 class="heading">Our Team Member</h3>
                                     <div class="mark mark-style"></div>
                                 </div>                                
                             </div>
-                        </div>
+                        </div>                   
+
                     </div>
                 </div>
             </section>
             <!-- end of client works -->
 
-            <section class="tf-space flat-servece page"><div class="overlay-page"></div>
+
+
+
+            <!-- QUALITATIVE SERVICES  -->
+                <section class="tf-space flat-servece page"><div class="overlay-page">
+
+                    <!-- <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="title">We want to provide you a Qualitative Service.</div>
+                            </div>   
+                        </div>
+                    </div> -->
+                </section>
+            <!--ENDS QUALITATIVE SERVICES HERE -->
+
+
+
+            
+
+            <!-- Trusted  25 years Experience-->
+            <section class="tf-space flat-trusted home3">
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-12">
-                            <div class="title">We want to servece you all digital agency.</div>
-                        </div>   
+                        <div class="col-lg-6 col-md-5">
+                            <div class="media-box">
+                                <div class="media">
+                                    <img src="assets/images/image-box/trusted-home3.png" alt="images">                                                                   
+                                </div>
+                                <div class="years-title text-color-3">
+                                    <h2>25+Years Experience </h2>   
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-7">
+                            <div class="trusted-heading">
+                                <div class="tf-sub-title">Please Get To Know Us</div>
+                                <h2 class="tf-title">We Are <span class="text-color-3 style-title">[Trusted]</span> By First & Best In The World.</h2>
+                            </div>
+                            <h3 class="text-color-3">Pnteger vitae pretium nunc. Aliquam rutrum lectus vel est pulvinar, in scelerisque purus faucibus fusce varius lacinia.</h3>
+                            <p>Phasellus dignissim arcu sit amet augue mattis, eget rutrum ex finibus. Morbi blandit luctus nisi, id ornare sem blandit sed. 
+                                In sed luctus dolor. Integer vitae pretium nunc. Aliquam rutrum lectus vel est pulvinar in scelerisque purus.</p> 
+
+                            <div class="img-user">
+                                <img src="assets/images/image-box/trusted-user.jpg" alt="images">   
+                            </div>
+                            <div class="img-title">
+                                <img src="assets/images/image-box/trusted-title.png" alt="images">   
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
 
-            <!-- flat team -->
-            <section class="tf-space flat-team flat-blog-grid">
-                <div class="container">
+
+
+
+
+            <!-- OUR TEAM -->
+            <section class="flat-team flat-blog-grid">
+                <!-- <div class="container">
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="team-heading wow fadeInDown" data-wow-delay="0ms" data-wow-duration="500ms">
-                                <div class="tf-sub-title">Working Member</div>
+                                <div class="tf-sub-title">Working Members</div>
                                 <h2 class="tf-title">Expart <span class="text-color-3 style-title">[Team]</span> Member</h2>
                             </div>
-                        </div>                       
-                        <div class="col-lg-3 col-md-6">
+                        </div>
+
+                        <?php // foreach($fetch_teams as $teams) : ?>
+                            <div class="col-lg-3 col-md-6">
                             <div class="team-box grid-post wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
                                 <div class="media">
-                                    <img src="assets/images/image-box/team-1.jpg" alt="images">                                
+                                    <img src="assets/images/image-box/<?php // echo $teams->_images; ?>" alt="images">                                
                                 </div>
                                 <div class="content"> 
-                                    <div class="sub-title-content">Bixos Founder</div>                                
-                                    <h3 ><a href="team.php">Subrom Monalisa Era</a></h3>
+                                    <div class="sub-title-content"><?php //echo $teams->_position; ?></div>                                
+                                    <h3 ><a href="team.php?team=<?php //echo $teams->_id; ?>"><?php //echo $teams->_name; ?></a></h3>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-6">
-                            <div class="team-box grid-post wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1700ms">
-                                <div class="media">
-                                    <img src="assets/images/image-box/team-2.jpg" alt="images">                                
-                                </div>
-                                <div class="content"> 
-                                    <div class="sub-title-content">Bixos Manager</div>                                
-                                    <h3 ><a href="team.php">Noah Oliver Elijah</a></h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6">
-                            <div class="team-box grid-post wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1900ms">
-                                <div class="media">
-                                    <img src="assets/images/image-box/team-3.jpg" alt="images">                                
-                                </div>
-                                <div class="content"> 
-                                    <div class="sub-title-content">Bixos Founder</div>                                
-                                    <h3 ><a href="team.php">Liam Olivia Emma</a></h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6">
-                            <div class="team-box grid-post wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1900ms">
-                                <div class="media">
-                                    <img src="assets/images/image-box/team-4.jpg" alt="images">                                
-                                </div>
-                                <div class="content"> 
-                                    <div class="sub-title-content">Bixos Founder</div>                                
-                                    <h3 ><a href="team.php">William Ames Benjamin</a></h3>
-                                </div>
-                            </div>
-                        </div>
+                        <?php // endforeach; ?>     
                     </div>
-                </div>
-            </section>
+                </div> -->
+            </section>            
+            <!-- END OF OUR TEAM -->
 
-             <!-- flat and -->
+            
+            
+            <!-- flat and -->
              <section class="flat-and page2">
                 <div class="container">
                     <div class="row">                      
@@ -381,6 +369,10 @@
                 </div>
             </section>
 
+
+
+
+
             <!-- testimonials starts flat work -->
             <section class="tf-space flat-testimonial home2">
                 <div class="container">
@@ -394,106 +386,38 @@
                         <div class="col-lg-12">
                             <div class="swiper-container testimonial-slider carousel-6">
                                 <div class="swiper-wrapper">
-                                    <div class="swiper-slide testimonial-post ">                                       
-                                        <div class="content">                                                                           
-                                            <div class="reviews-box">
-                                                <div class="reviews">
-                                                    <h3>Elijah	Charlotte Eva</h3>
-                                                    <span class="star">
-                                                        <i class="fas fa-star"></i>
-                                                        <i class="fas fa-star"></i>
-                                                        <i class="fas fa-star"></i>
-                                                        <i class="fas fa-star"></i>
-                                                        <i class="fas fa-star"></i>                       
-                                                    </span>
-                                                    <span class="review">5 Reviews</span>
-                                                </div>
-                                                <div class="media">
-                                                    <img src="assets/images/image-box/client-1.png" alt="images">                                
+                                    <?php foreach($fetch_testimonials as $testimonial) :?>                                      
+                                        <div class="swiper-slide testimonial-post "> 
+                                            <div class="content">                                                                           
+                                                <div class="reviews-box">
+                                                    <div class="reviews">
+                                                        <h3><?php echo $testimonial-> _name ?></h3>
+                                                        <span class="star">
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>                       
+                                                        </span>
+                                                        <span class="review">5 Reviews</span>
+                                                    </div>
+                                                    <div class="media">
+                                                        <img src="assets/images/image-box/<?php echo $testimonial-> _images ?>" alt="images">                                
+                                                    </div>                                               
                                                 </div>                                               
-                                            </div>                                               
-                                            <div class="tf-texts">                                              
-                                                <span class="text">Fusce sodales egestas neque, in pulvinar enim ultriciet. Vivamus vitae consequat elit. Praesent lacinia tincidunt
-                                                    Vestibulum ante ipsum the primis in faucibus orci luctu
-                                                    ultrices posuere cubilia curae Integer tincidunt sodales
-                                                    pulvinar Praesent lacinia tincidunt varius.
-                                                </span>
-                                                <span class="media-1">
-                                                    <img src="assets/images/icon/testi-2.png" alt="images">                                
-                                                </span> 
-                                                <span class="media-2">
-                                                    <img src="assets/images/icon/testi-1.png" alt="images">                                
-                                                </span>
-                                            </div>                                        
-                                        </div>
-                                    </div>  
-                                    <div class="swiper-slide testimonial-post ">                                       
-                                        <div class="content">                                  
-                                            <div class="reviews-box">
-                                                <div class="reviews">
-                                                    <h3>Elijah	Charlotte Eva</h3>
-                                                    <span class="star">
-                                                        <i class="fas fa-star"></i>
-                                                        <i class="fas fa-star"></i>
-                                                        <i class="fas fa-star"></i>
-                                                        <i class="fas fa-star"></i>
-                                                        <i class="fas fa-star"></i>                       
+                                                <div class="tf-texts">                                              
+                                                    <span class="text"><?php echo $testimonial-> _content ?></span>
+                                                    <span class="media-1">
+                                                        <img src="assets/images/icon/testi-2.png" alt="images">                                
+                                                    </span> 
+                                                    <span class="media-2">
+                                                        <img src="assets/images/icon/testi-1.png" alt="images">                                
                                                     </span>
-                                                    <span class="review">5 Reviews</span>
-                                                </div>
-                                                <div class="media">
-                                                    <img src="assets/images/image-box/client-2.png" alt="images">                                
-                                                </div>                                                
+                                                </div>                                        
                                             </div>
-                                            <div class="tf-texts">                                              
-                                                <span class="text">Fusce sodales egestas neque, in pulvinar enim ultriciet. Vivamus vitae consequat elit. Praesent lacinia tincidunt
-                                                    Vestibulum ante ipsum the primis in faucibus orci luctu
-                                                    ultrices posuere cubilia curae Integer tincidunt sodales
-                                                    pulvinar Praesent lacinia tincidunt varius.
-                                                </span>
-                                                <span class="media-1">
-                                                    <img src="assets/images/icon/testi-2.png" alt="images">                                
-                                                </span> 
-                                                <span class="media-2">
-                                                    <img src="assets/images/icon/testi-1.png" alt="images">                                
-                                                </span>
-                                            </div>                                        
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide testimonial-post ">                                       
-                                        <div class="content">                                  
-                                            <div class="reviews-box">
-                                                <div class="reviews">
-                                                    <h3>Elijah	Charlotte Eva</h3>
-                                                    <span class="star">
-                                                        <i class="fas fa-star"></i>
-                                                        <i class="fas fa-star"></i>
-                                                        <i class="fas fa-star"></i>
-                                                        <i class="fas fa-star"></i>
-                                                        <i class="fas fa-star"></i>                       
-                                                    </span>
-                                                    <span class="review">5 Reviews</span>
-                                                </div>
-                                                <div class="media">
-                                                    <img src="assets/images/image-box/client-1.png" alt="images">                                
-                                                </div>                                                
-                                            </div>
-                                            <div class="tf-texts">                                              
-                                                <span class="text">Fusce sodales egestas neque, in pulvinar enim ultriciet. Vivamus vitae consequat elit. Praesent lacinia tincidunt
-                                                    Vestibulum ante ipsum the primis in faucibus orci luctu
-                                                    ultrices posuere cubilia curae Integer tincidunt sodales
-                                                    pulvinar Praesent lacinia tincidunt varius.
-                                                </span>
-                                                <span class="media-1">
-                                                    <img src="assets/images/icon/testi-2.png" alt="images">                                
-                                                </span> 
-                                                <span class="media-2">
-                                                    <img src="assets/images/icon/testi-1.png" alt="images">                                
-                                                </span>
-                                            </div>                                        
-                                        </div>
-                                    </div>                                                                     
-                                </div>    
+                                        </div>                                    
+                                    <?php endforeach ; ?>    
+                                </div>
                                 <div class="swiper-pagination"></div>                                        
                             </div>                          
                         </div>     
@@ -501,60 +425,7 @@
                 </div>
             </section>
             <!-- testimonials end -->
-
-
-            <!-- Carousel for Brands -->
-            <section class="flat-brand">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12">
-                            <div class="brand-slider">
-                                <div class="swiper-container carousel-3">
-                                    <div class="swiper-wrapper">
-                                        <div class="swiper-slide">
-                                            <div class="slogan-logo">
-                                                <a href="#">
-                                                    <img src="assets/images/image-box/slogan.png" alt="images">
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="slogan-logo active">
-                                                <a href="#">
-                                                    <img src="assets/images/image-box/slogan.png" alt="images">
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="slogan-logo">
-                                                <a href="#">
-                                                    <img src="assets/images/image-box/slogan.png" alt="images">
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="slogan-logo">
-                                                <a href="#">
-                                                    <img src="assets/images/image-box/slogan.png" alt="images">
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="slogan-logo">
-                                                <a href="#">
-                                                    <img src="assets/images/image-box/slogan.png" alt="images">
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- Brands end here -->
-
+            
 
             
             <?php include("include/footer.php") ?>   

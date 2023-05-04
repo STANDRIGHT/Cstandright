@@ -10,7 +10,7 @@
         }
 
         public function getservice(){
-            // 2 MAKE QU ERY FOR SERVICES
+            // 2 MAKE QUERY FOR SERVICES
             $services= $this->prepare("SELECT _id  AS _Sid , Simages AS images, Spng As png, Stitle As title, Ssubtitle AS subtitle, Sdescription AS _description  FROM  ".TBL_SERVICES." ");
             $services->execute();        
             
@@ -62,6 +62,59 @@
             }
 
             return $fetch_testimonials;
+        }
+
+
+
+        public function service_details($id){
+            // 7 MAKE QUERY FOR SERVICE_DETAILS
+            $service_details= $this->prepare("SELECT _id  AS _Sid , Simages AS images, Subimages AS _Subimages, Spng As png, 
+                Scaption AS _Scaption, Stitle As title, Ssubtitle AS subtitle, Sdescription AS _description, SLdetails _SLdetails, 
+                SMdetails _SMdetails, Sjourney _Sjourney, Sjourney2 _Sjourney2, added_by _added_by, created_by _created_by
+                FROM  ".TBL_SERVICES." WHERE _id=:id");
+            $service_details->bindParam(":id", $id);
+            $service_details->execute();        
+            
+            // fetch and return data
+            return $service_details->fetch(PDO:: FETCH_OBJ);
+        }
+
+        /*public function service_details_list($Sid){
+            // 2 MAKE QU ERY FOR SERVICES
+            $service_details= $this->prepare("SELECT _id  AS _Sid , Simages AS images, Subimages AS _Subimages, Spng As png, 
+                Scaption AS _Scaption, Stitle As title, Ssubtitle AS subtitle, Sdescription AS _description, SLdetails _SLdetails, 
+                SMdetails _SMdetails, Sjourney _Sjourney, Sjourney2 _Sjourney2, added_by _added_by, created_by _created_by
+                FROM  ".TBL_SERVICES." WHERE _id=:Sid");
+            $service_details->bindParam(":Sid", $Sid);
+            $service_details->execute();        
+            
+            // fetch and return data
+            return $service_details->fetchAll(PDO:: FETCH_OBJ);
+        }*/
+
+        public function Sdetails_list(){
+            //8 FUNCTION for DETAILS_LIST
+            $Sdetails_list= $this->prepare("SELECT _id  AS SLid, _name SLname, created_by SLcreated_by, created_at SLcreated_at 
+            FROM ".TBL_SERVICE_LIST." ");
+            $Sdetails_list->execute();
+
+            //fetch data and return
+            return $Sdetails_list->fetchAll(PDO:: FETCH_OBJ);
+        }
+
+        public function Service_list_details($SLid){
+            //9 FUNCTION for SERVICE_LIST_DETAILS
+            $Sdetails= $this->prepare("SELECT _id  AS _Sid , Simages AS images, Subimages AS _Subimages, Spng As png, 
+            Scaption AS _Scaption, Stitle As title, Ssubtitle AS subtitle, Sdescription AS _description, SLdetails _SLdetails, 
+            SMdetails _SMdetails, Sjourney _Sjourney, Sjourney2 _Sjourney2, added_by _added_by, created_by _created_by
+            FROM  ".TBL_SERVICES." WHERE _id=:SLid");
+            $Sdetails->bindParam(":SLid", $SLid);
+            $Sdetails->execute();
+
+            //fetch and return date
+            return  $Sdetails->fetch(PDO:: FETCH_OBJ);
+
+
         }
 
 
