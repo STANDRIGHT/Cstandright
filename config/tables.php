@@ -19,3 +19,6 @@ const TBL_TESTIMONIALS ="testimonials";
 
 //tables for testimonials
 const TBL_SERVICE_LIST ="_servicelist";
+
+//tables for tag
+const TBL_TAGS = "tags";

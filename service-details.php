@@ -30,6 +30,12 @@ if(isset($_GET["id"])){
     // 2 MAKE QUERY FOR details_list
     $Sdetails_list=$app->Sdetails_list();
     // print_r($Sdetails);
+
+
+    //10 MAKE FUNCTION FOR TAG LIST IN THE SERVICE DETAILS AND SERVICES_LIST _DETAILS
+    $tags = $app->tags( $id);
+
+
 ?>
 
                 
@@ -104,14 +110,17 @@ if(isset($_GET["id"])){
                                         </div>
 
                                         <ul class="service-tag tag2">
-                                            <li><a href="javascript:void(0)">UX strategy</a></li>
-                                            <li><a href="javascript:void(0)">Development</a></li>                                             
-                                            <li><a href="#"style="pointer-events:none;">Marketing</a></li>
-                                            <li><a href="#"style="pointer-events:none;">Wireframing</a></li>
-                                            <li><a href="#"style="pointer-events:none;">UI Design</a></li> 
+                                            <li>Box <span class="text-color-3">[Model]</span></li>
+                                            <!-- <li><a href="javascript:void(0)">Development</a></li> -->  
+
+                                            <?php $x=json_decode($tags->T_name);  foreach($x as $tag) :?>                                  
+                                                <li><a href="javascript:void(0)"style="pointer-events:none"><?= $tag ?></a></li>                                           
+                                            <?php endforeach; ?>
+                                            <!-- <li><a href="#"style="pointer-events:none;">Wireframing</a></li> -->
                                         </ul>
 
-                                        <ul class="service-tag tag1">                                    
+                                        <ul class="service-tag tag1"> 
+                                            <li>Core <span class="text-color-3">[Values]</span></li>
                                             <li><a href="#" style="pointer-events:none;">Dedication</a></li>
                                             <li><a href="#"style="pointer-events:none;">Efficiency</a></li>                                             
                                             <li><a href="#"style="pointer-events:none;">Productivity</a></li>
@@ -119,10 +128,21 @@ if(isset($_GET["id"])){
                                             <li><a href="#"style="pointer-events:none;">Effectiveness</a></li> 
                                         </ul> 
                                     </div>  
-                                     
+
+                                    <?php if($id==4) : ?>                                                                                                                           
+                                        <h3>Personalize <span class="text-color-3">[CONNECTIONS]</span> With Segmented Audiences.</h3>
+                                    <?php endif; ?>  
+
                                     <p class="text-2"><?php echo html_entity_decode($service_details->_SMdetails); ?></p><br>  
+                                    <!-- for-motion-graphice only -->
+                                    <?php if($id==4) : ?> 
+                                        <div class="media img-01">
+                                            <img src="assets/images/services_details/27.jpg" alt="services images">
+                                        </div>
+                                    <?php endif; ?>                                    
+                                    <!-- end-motion-graphice only -->                                    
                                     <h3>Our Success <span class="text-color-3">[JOURNEY]</span> We Can Provide.</h3>
-                                    <p class="text"><?php echo html_entity_decode($service_details->_Sjourney); ?></p> 
+                                    <p class="text"><?= config::Company["name"]; ?> <?php echo html_entity_decode($service_details->_Sjourney); ?></p> 
 
                                     <ul class="icon-box">
                                         <li class="icon icon-one">
@@ -140,7 +160,7 @@ if(isset($_GET["id"])){
                                     </ul> 
                                      
                                     <h3>Partnering <span class="text-color-3">[WITH YOUR]</span> creative teams.</h3>
-                                    <p class="text-3"><?php echo $service_details->_Sjourney2; ?></p>  
+                                    <p class="text-3"><?= config::Company["name"]; ?> <?php echo $service_details->_Sjourney2; ?></p>  
                                      
                                         
                                     <div class="flat-accordion fl-faq-content">    
@@ -194,11 +214,11 @@ if(isset($_GET["id"])){
                                                     You will also need to have all the necessary details needed for online payment gateway registration.</p>
                                             </div>
                                         </div>
-
-                                    </div>                                        
+                                    </div>
                                 </div>                                                              
                             </article>        
-                        
+
+                            
                         </div>
                         <div class="col-lg-4 col-md-12">
                             <aside class="side-bar">
@@ -268,7 +288,7 @@ if(isset($_GET["id"])){
                                     <!--END COMPANY INFORMATION -->                                        
 
 
-                                    
+                                    <!-- widget service List -->
                                     <div class="widget widget-categories"> 
                                         <div class="widget-title item">
                                             <h3>Services List</h3>  
@@ -285,6 +305,7 @@ if(isset($_GET["id"])){
                                             <?php endforeach ;?>                                                        
                                         </ul>
                                     </div>
+                                    <!-- end widget servece List -->
                                     
                                     <div class="widget tags_cloud">
                                         <div class="widget-title">
@@ -302,11 +323,72 @@ if(isset($_GET["id"])){
                                             <a href="blog-grid.php">Template</a>
                                         </div>
                                     </div>
+
+
+                                    
+                                    <div class="recent-post">
+                                                <div class="widget-title item">
+                                                    <h3>Recent Posts</h3>
+                                                </div>                                                                
+                                                <ul class="widget recent-news">
+                                                    <li>
+                                                        <div class="thumb ">
+                                                            <img src="assets/images/image-box/recent-post-01.png" alt="images">
+                                                        </div>
+                                                        <div class="texts grid-post">
+                                                            <div class="title-item text-color-3">                          
+                                                                Web Design
+                                                            </div>
+                                                            <h5><a href="case-study.php">Digital Marketing Advertise Onboarding</a></h5>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="thumb">
+                                                            <img src="assets/images/image-box/recent-post-06.png" alt="images">
+                                                        </div>
+                                                        <div class="texts grid-post">
+                                                            <div class="title-item text-color-3">                          
+                                                                Web Design
+                                                            </div>
+                                                            <h5><a href="case-study.php">Digital Marketing Advertise Onboarding</a></h5>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="thumb">
+                                                            <img src="assets/images/image-box/recent-post-07.png" alt="images">
+                                                        </div>
+                                                        <div class="texts grid-post">
+                                                            <div class="title-item text-color-3">                          
+                                                                Web Design
+                                                            </div>
+                                                            <h5><a href="case-study.php">Digital Marketing Advertise Onboarding</a></h5>
+                                                        </div>
+                                                    </li>
+                                                    <li class="flat">
+                                                        <div class="thumb">
+                                                            <img src="assets/images/image-box/recent-post-08.png" alt="images">
+                                                        </div>
+                                                        <div class="texts grid-post">
+                                                            <div class="title-item text-color-3">                          
+                                                                Web Design
+                                                            </div>
+                                                            <h5><a href="case-study.php">Digital Marketing Advertise Onboarding</a></h5>                                              
+                                                        </div>
+                                                    </li>
+                                                </ul>                                     
+                                            </div>
+                                                    
+
+
+                                    
                                 </div>
                             </aside>
                         </div>
-                    </div>
+                    </div>                    
                 </div>
+
             </div>
-            <!-- END OF ALL DETAILS LANDING -->          
-            <?php include("include/footer.php") ?>   
+            <!-- END OF ALL DETAILS LANDING -->   
+        
+
+<?php include("include/footer.php") ?>   

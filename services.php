@@ -101,76 +101,78 @@
                                                 </form>
                                             </div>
 
-                                    <!--Widget-categories-->
-                                    <div class="widget widget-categories"> 
-                                        <div class="widget-title item">
-                                            <h3>Services List</h3>  
-                                        </div>                                                                                                                        
-                                        <ul>
-                                            <?php foreach($Sdetails_list as $Sdetail) :?>
-                                                <li >
-                                                    <a class="<?php //if($SLid==){}?>" href="service-details-list.php?SLid=<?php echo $Sdetail->SLid; ?>"><?php echo $Sdetail->SLname; ?></a> 
-                                                </li>
-                                            
-                                                <li class="tf-style">
-                                                    <!-- <a href="services.php">XD Design</a> -->
-                                                </li>
-                                            <?php endforeach ;?>                                                        
-                                        </ul>
-                                    </div>
-                                    <!--End Widget-categories-->
+                                            <!--Widget-categories-->
+                                            <div class="widget widget-categories"> 
+                                                <div class="widget-title item">
+                                                    <h3>Services List</h3>  
+                                                </div>                                                                                                                        
+                                                <ul>
+                                                    <?php foreach($Sdetails_list as $Sdetail) :?>
+                                                        <li >
+                                                            <a class="<?php //if($SLid==){}?>" href="service-details-list.php?SLid=<?php echo $Sdetail->SLid; ?>"><?php echo $Sdetail->SLname; ?></a> 
+                                                        </li>
+                                                    
+                                                        <li class="tf-style">
+                                                            <!-- <a href="services.php">XD Design</a> -->
+                                                        </li>
+                                                    <?php endforeach ;?>                                                        
+                                                </ul>
+                                            </div>
+                                            <!--End Widget-categories-->
 
 
-
-                                            <div class="widget-title item">
-                                                <h3>Recent Posts</h3>
-                                            </div>                                                                
-                                            <ul class="widget recent-news">
-                                                <li>
-                                                    <div class="thumb ">
-                                                        <img src="assets/images/image-box/recent-post-01.png" alt="images">
-                                                    </div>
-                                                    <div class="texts grid-post">
-                                                        <div class="title-item text-color-3">                          
-                                                            Web Design
+                                            <div class="recent-post">
+                                                <div class="widget-title item">
+                                                    <h3>Recent Posts</h3>
+                                                </div>                                                                
+                                                <ul class="widget recent-news">
+                                                    <li>
+                                                        <div class="thumb ">
+                                                            <img src="assets/images/image-box/recent-post-01.png" alt="images">
                                                         </div>
-                                                        <h5><a href="case-study.php">Digital Marketing Advertise Onboarding</a></h5>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="thumb">
-                                                        <img src="assets/images/image-box/recent-post-06.png" alt="images">
-                                                    </div>
-                                                    <div class="texts grid-post">
-                                                        <div class="title-item text-color-3">                          
-                                                            Web Design
+                                                        <div class="texts grid-post">
+                                                            <div class="title-item text-color-3">                          
+                                                                Web Design
+                                                            </div>
+                                                            <h5><a href="case-study.php">Digital Marketing Advertise Onboarding</a></h5>
                                                         </div>
-                                                        <h5><a href="case-study.php">Digital Marketing Advertise Onboarding</a></h5>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="thumb">
-                                                        <img src="assets/images/image-box/recent-post-07.png" alt="images">
-                                                    </div>
-                                                    <div class="texts grid-post">
-                                                        <div class="title-item text-color-3">                          
-                                                            Web Design
+                                                    </li>
+                                                    <li>
+                                                        <div class="thumb">
+                                                            <img src="assets/images/image-box/recent-post-06.png" alt="images">
                                                         </div>
-                                                        <h5><a href="case-study.php">Digital Marketing Advertise Onboarding</a></h5>
-                                                    </div>
-                                                </li>
-                                                <li class="flat">
-                                                    <div class="thumb">
-                                                        <img src="assets/images/image-box/recent-post-08.png" alt="images">
-                                                    </div>
-                                                    <div class="texts grid-post">
-                                                        <div class="title-item text-color-3">                          
-                                                            Web Design
+                                                        <div class="texts grid-post">
+                                                            <div class="title-item text-color-3">                          
+                                                                Web Design
+                                                            </div>
+                                                            <h5><a href="case-study.php">Digital Marketing Advertise Onboarding</a></h5>
                                                         </div>
-                                                        <h5><a href="case-study.php">Digital Marketing Advertise Onboarding</a></h5>                                              
-                                                    </div>
-                                                </li>
-                                            </ul>                                     
+                                                    </li>
+                                                    <li>
+                                                        <div class="thumb">
+                                                            <img src="assets/images/image-box/recent-post-07.png" alt="images">
+                                                        </div>
+                                                        <div class="texts grid-post">
+                                                            <div class="title-item text-color-3">                          
+                                                                Web Design
+                                                            </div>
+                                                            <h5><a href="case-study.php">Digital Marketing Advertise Onboarding</a></h5>
+                                                        </div>
+                                                    </li>
+                                                    <li class="flat">
+                                                        <div class="thumb">
+                                                            <img src="assets/images/image-box/recent-post-08.png" alt="images">
+                                                        </div>
+                                                        <div class="texts grid-post">
+                                                            <div class="title-item text-color-3">                          
+                                                                Web Design
+                                                            </div>
+                                                            <h5><a href="case-study.php">Digital Marketing Advertise Onboarding</a></h5>                                              
+                                                        </div>
+                                                    </li>
+                                                </ul>                                     
+                                            </div>
+                                                                                        
                                         </div>
                                     </aside>
                                 </div>

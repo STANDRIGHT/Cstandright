@@ -57,9 +57,9 @@ include dirname(dirname(__FILE__)) . "/config/define.php";
 <body class="header-fixed counter-scroll">
 
      <!-- preloader -->
-        <div class="preload preload-container">
+        <!-- <div class="preload preload-container">
             <div class="preload-logo"></div>
-        </div>
+        </div> -->
     <!-- /preloader -->
 
     <div id="wrapper" class="animsition">

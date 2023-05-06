@@ -119,6 +119,20 @@
 
 
 
+        public function tags( $id){
+            //10 MAKE FUNCTION FOR TAG LIST IN THE SERVICE DETAILS AND SERVICES_LIST _DETAILS
+            $tags= $this->prepare("SELECT _id  AS Tid, service_id AS Tservice_id, _name T_name, created_at Tcreated_at
+                FROM  ".TBL_TAGS." WHERE service_id=:id");
+            $tags->bindParam(":id", $id);
+            $tags->execute();
+
+            //fetch and return data
+            return $tags->fetch(PDO:: FETCH_OBJ);
+
+            
+        }
+
+
 
 
 
