@@ -36,6 +36,9 @@ include dirname(dirname(__FILE__)) . "/config/define.php";
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <!-- <link rel="stylesheet" href="assets/css/style.css"> -->
 
+
+    <link rel="stylesheet" type="text/css" href="rating-plugins/src/css/star-rating-svg.css">
+
     <!-- Reponsive -->
     <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
 
@@ -57,9 +60,9 @@ include dirname(dirname(__FILE__)) . "/config/define.php";
 <body class="header-fixed counter-scroll">
 
      <!-- preloader -->
-        <!-- <div class="preload preload-container">
+        <div class="preload preload-container">
             <div class="preload-logo"></div>
-        </div> -->
+        </div>
     <!-- /preloader -->
 
     <div id="wrapper" class="animsition">

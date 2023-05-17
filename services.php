@@ -120,7 +120,24 @@
                                             </div>
                                             <!--End Widget-categories-->
 
+                                            <div class="widget tags_cloud">
+                                                <div class="widget-title">
+                                                    <h3>Recent Works</h3>
+                                                </div>
+                                                <div class="tags_cloud_inner ">
+                                                    <a href="recent-work" class="active">Web Development</a>
+                                                    <a href="recent-work">Digital Marketing</a>
+                                                    <a href="recent-work">Graphics Design</a>
+                                                    <a href="recent-work">Still Motion Graphics</a>
+                                                    <a href="recent-work" >Digital</a>
+                                                    <a href="recent-work">SEO Analysis</a>
+                                                    <a href="recent-work">UX & UI</a>
+                                                    <a href="recent-work">Web Design</a>
+                                                    <!-- <a href="blog-grid.php">Template</a> -->
+                                                </div>
+                                            </div>                                            
 
+                                            <!-- Recent Post -->
                                             <div class="recent-post">
                                                 <div class="widget-title item">
                                                     <h3>Recent Posts</h3>
@@ -170,9 +187,9 @@
                                                             <h5><a href="case-study.php">Digital Marketing Advertise Onboarding</a></h5>                                              
                                                         </div>
                                                     </li>
-                                                </ul>                                     
+                                                </ul>
                                             </div>
-                                                                                        
+                                            <!-- End Recent post  -->
                                         </div>
                                     </aside>
                                 </div>
@@ -182,6 +199,8 @@
                     </div>
                 </div>
             <!-- services card with side search procedure -->
+
+
 
 
             <!-- work done for client -->
@@ -239,7 +258,8 @@
 
 
             <!-- QUALITATIVE SERVICES  -->
-                <section class="tf-space flat-servece page"><div class="overlay-page">
+                <section class="tf-space flat-servece page">
+                    <div class="overlay-page"></div>
 
                     <!-- <div class="container">
                         <div class="row">
@@ -325,8 +345,8 @@
             
             
             <!-- flat and -->
-             <section class="flat-and page2">
-                <div class="container">
+            <section class="flat-and page2">
+                 <!-- <div class="container">
                     <div class="row">                      
                         <div class="col-lg-6 col-md-5">
                             <div class="and-heading">
@@ -368,7 +388,7 @@
                             </div>                            
                         </div>
                     </div>
-                </div>
+                </div> -->
             </section>
 
 

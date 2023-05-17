@@ -89,6 +89,7 @@
                                     <p class="text-4">Phasellus dignissim arcu sit amet augue mattis, eget rutrum ex finibus. Morbi blandit luctus nisi,
                                         id ornare sem blandit sed. In sed luctus dolor. Integer vitae pretium nunc. Aliquam rutrum lectus 
                                         vel est pulvinar in scelerisque purus.</p> 
+  
                                     <div class="wrap-pogress">
                                         <div class="progress-box style-1">
                                             <div class="progress-skill">
@@ -213,7 +214,7 @@
                             <div class="work-slider ">                               
                                 <div class="work-post style wow fadeInUp" data-wow-delay="0ms" data-wow-duration="500ms">
                                     <div class="media">
-                                        <img src="assets/images/image-box/work-01.jpg" alt="images">                                
+                                        <img src="assets/images/our-services/work-01.jpg" alt="images">                                
                                     </div>
                                     <div class="content">
                                         <div class="tags"><span >Web Design</span></div>                                  
@@ -226,7 +227,7 @@
                             <div class="work-slider ">                             
                                 <div class="work-post style wow fadeInUp" data-wow-delay="0ms" data-wow-duration="500ms">
                                     <div class="media">
-                                        <img src="assets/images/image-box/work-02.jpg" alt="images">                                
+                                        <img src="assets/images/our-services/work-02.jpg" alt="images">                                
                                     </div>
                                     <div class="content">
                                         <div class="tags"><span >Web Design</span></div>                                  
@@ -239,7 +240,7 @@
                             <div class="work-slider">
                                 <div class=" work-post style wow fadeInUp" data-wow-delay="0ms" data-wow-duration="500ms">
                                     <div class="media">
-                                        <img src="assets/images/image-box/work-03.jpg" alt="images">                                
+                                        <img src="assets/images/our-services/work-03.jpg" alt="images">                                
                                     </div>
                                     <div class="content">
                                         <div class="tags"><span >Web Design</span></div>                                  

@@ -312,71 +312,76 @@ if(isset($_GET["id"])){
                                             <h3>Recent Works</h3>
                                         </div>
                                         <div class="tags_cloud_inner ">
-                                            <a href="blog-grid.php">Creative</a>
-                                            <a href="blog-grid.php">Agency</a>
-                                            <a href="blog-grid.php">Business</a>
-                                            <a href="blog-grid.php">Corporate</a>
-                                            <a href="blog-grid.php" class="active">Digital</a>
-                                            <a href="blog-grid.php">Parsonal Web</a>
-                                            <a href="blog-grid.php">UX?UI</a>
-                                            <a href="blog-grid.php">Web Design</a>
-                                            <a href="blog-grid.php">Template</a>
+                                            <a href="recent-work" class="active">Web Development</a>
+                                            <a href="recent-work">Digital Marketing</a>
+                                            <a href="recent-work">Graphics Design</a>
+                                            <a href="recent-work">Still Motion Graphics</a>
+                                            <a href="recent-work" >Digital</a>
+                                            <a href="recent-work">SEO Analysis</a>
+                                            <a href="recent-work">UX & UI</a>
+                                            <a href="recent-work">Web Design</a>
+                                            <!-- <a href="blog-grid.php">Template</a> -->
                                         </div>
                                     </div>
 
 
-                                    
+                                    <br>
+                                    <br>
                                     <div class="recent-post">
-                                                <div class="widget-title item">
-                                                    <h3>Recent Posts</h3>
-                                                </div>                                                                
-                                                <ul class="widget recent-news">
-                                                    <li>
-                                                        <div class="thumb ">
-                                                            <img src="assets/images/image-box/recent-post-01.png" alt="images">
-                                                        </div>
-                                                        <div class="texts grid-post">
-                                                            <div class="title-item text-color-3">                          
-                                                                Web Design
-                                                            </div>
-                                                            <h5><a href="case-study.php">Digital Marketing Advertise Onboarding</a></h5>
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="thumb">
-                                                            <img src="assets/images/image-box/recent-post-06.png" alt="images">
-                                                        </div>
-                                                        <div class="texts grid-post">
-                                                            <div class="title-item text-color-3">                          
-                                                                Web Design
-                                                            </div>
-                                                            <h5><a href="case-study.php">Digital Marketing Advertise Onboarding</a></h5>
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="thumb">
-                                                            <img src="assets/images/image-box/recent-post-07.png" alt="images">
-                                                        </div>
-                                                        <div class="texts grid-post">
-                                                            <div class="title-item text-color-3">                          
-                                                                Web Design
-                                                            </div>
-                                                            <h5><a href="case-study.php">Digital Marketing Advertise Onboarding</a></h5>
-                                                        </div>
-                                                    </li>
-                                                    <li class="flat">
-                                                        <div class="thumb">
-                                                            <img src="assets/images/image-box/recent-post-08.png" alt="images">
-                                                        </div>
-                                                        <div class="texts grid-post">
-                                                            <div class="title-item text-color-3">                          
-                                                                Web Design
-                                                            </div>
-                                                            <h5><a href="case-study.php">Digital Marketing Advertise Onboarding</a></h5>                                              
-                                                        </div>
-                                                    </li>
-                                                </ul>                                     
-                                            </div>
+                                        <div class="widget-title item">
+                                            <h3>Recent Posts</h3>
+                                        </div>                                                                
+                                        <ul class="widget recent-news">
+                                            <li>
+                                                <div class="thumb ">
+                                                    <img src="assets/images/image-box/recent-post-01.png" alt="images">
+                                                </div>
+                                                <div class="texts grid-post">
+                                                    <div class="title-item text-color-3">                          
+                                                        Web Design
+                                                    </div>
+                                                    <h5><a href="case-study.php">Digital Marketing Advertise Onboarding</a></h5>
+                                                </div>
+                                            </li>
+
+                                            <li>
+                                                <div class="thumb ">
+                                                    <img src="assets/images/image-box/recent-post-02.png" alt="images">
+                                                </div>
+                                                <div class="texts grid-post">
+                                                    <div class="title-item text-color-3">                          
+                                                        Web Design
+                                                    </div>
+                                                    <h5><a href="case-study.php">Digital Marketing Advertise Onboarding</a></h5>
+                                                </div>
+                                            </li>
+                                            
+                                            <li>
+                                                <div class="thumb ">
+                                                    <img src="assets/images/image-box/recent-post-03.png" alt="images">
+                                                </div>
+                                                <div class="texts grid-post">
+                                                    <div class="title-item text-color-3">                          
+                                                        Web Design
+                                                    </div>
+                                                    <h5><a href="case-study.php">Digital Marketing Advertise Onboarding</a></h5>
+                                                </div>
+                                            </li>
+                                            
+                                            
+                                            <li>
+                                                <div class="thumb ">
+                                                    <img src="assets/images/image-box/recent-post-04.png" alt="images">
+                                                </div>
+                                                <div class="texts grid-post">
+                                                    <div class="title-item text-color-3">                          
+                                                        Web Design
+                                                    </div>
+                                                    <h5><a href="case-study.php">Digital Marketing Advertise Onboarding</a></h5>
+                                                </div>
+                                            </li>                                            
+                                        </ul>                                    
+                                    </div>
                                                     
 
 
@@ -388,7 +393,21 @@ if(isset($_GET["id"])){
                 </div>
 
             </div>
-            <!-- END OF ALL DETAILS LANDING -->   
+            <!-- END OF ALL DETAILS LANDING --> 
+            
+            <div class="rating">
+                <div class="my-rating"></div>
+                <input type="text" id="rating-system" value="">
+            </div>
         
 
 <?php include("include/footer.php") ?>   
+<script>
+    $(".my-rating").starRating({
+    starSize: 25,
+    callback: function(currentRating, $el){
+        // make a server call here
+        $("#rating-system").val(currentRating);
+    }
+});
+</script>

@@ -20,6 +20,11 @@ if (isset($_GET["SLid"])) {
     $Sdetails_list=$app->Sdetails_list();
     // print_r($Sdetails);
 
+
+    //10 MAKE FUNCTION FOR TAG LIST IN THE SERVICE-DETAILS-LISTS AND SERVICES_LIST _DETAILS
+    $tags2 = $app->tags($SLid);
+
+
 ?>
 
                 
@@ -85,32 +90,50 @@ if (isset($_GET["SLid"])) {
                                     <!-- End Simages -->
                                     
                                     <h2 class="title"><?php echo $Sdetails->_Scaption ?></h2>
-                                    <p class="text"><?php echo $Sdetails->_SLdetails ?></p>
+                                    <h3 style="color:#CE9E00;"><?php if($SLid==3){echo "Now offering comprehensvie Graphics Design solutions for every business!"; }?></h3>                          
+                                    <p class="text"><?php echo html_entity_decode($Sdetails->_SLdetails) ?><br></p>
+                                                                    
                                    
                                     <div class="box">
                                         <div class="media img-02">
                                             <img src="assets/images/services_details/<?php echo $Sdetails->_Subimages ?>" alt="services images">
                                         </div>
-                                        <ul class="service-tag tag1">                                    
-                                            <li><a href="">Dedication</a></li>
-                                            <li><a href="services.php">Efficiency</a></li>                                             
-                                            <li><a href="services.php">Productivity</a></li>
-                                            <li><a href="services.php">Transparency</a></li>
-                                            <li><a href="services.php">Effectiveness</a></li> 
-                                        </ul> 
-                                        
                                         <ul class="service-tag tag2">
-                                            <li><a href="services.php">UX strategy</a></li>
-                                            <li><a href="services.php">Development</a></li>                                             
-                                            <li><a href="services.php">Marketing</a></li>
-                                            <li><a href="services.php">Wireframing</a></li>
-                                            <li><a href="services.php">UI Design</a></li> 
+                                            <li>Box <span class="text-color-3">[Model]</span></li>
+                                            <!-- <li><a href="javascript:void(0)">Development</a></li> -->  
+
+                                            <?php $x=json_decode($tags2->T_name);  foreach($x as $tag) :?>                                  
+                                                <li><a href="javascript:void(0)"style="pointer-events:none"><?= $tag ?></a></li>                                           
+                                            <?php endforeach; ?>
+                                            <!-- <li><a href="#"style="pointer-events:none;">Wireframing</a></li> -->
+                                        </ul>
+
+                                        <ul class="service-tag tag1"> 
+                                            <li>Core <span class="text-color-3">[Values]</span></li>
+                                            <li><a href="#" style="pointer-events:none;">Dedication</a></li>
+                                            <li><a href="#"style="pointer-events:none;">Efficiency</a></li>                                             
+                                            <li><a href="#"style="pointer-events:none;">Productivity</a></li>
+                                            <li><a href="#"style="pointer-events:none;">Transparency</a></li>
+                                            <li><a href="#"style="pointer-events:none;">Effectiveness</a></li> 
                                         </ul>
                                     </div>  
-                                     
-                                    <p class="text-2"><?php echo $Sdetails->_SMdetails; ?></p>  
+
+                                    <?php if($SLid==4) : ?>                                                                                                                           
+                                        <h3>Personalize <span class="text-color-3">[CONNECTIONS]</span> With Segmented Audiences.</h3>
+                                    <?php endif; ?>      
+                                    
+                                    <p class="text-2"><?php echo html_entity_decode($Sdetails->_SMdetails); ?></p><br>  
+                                    <!-- for-motion-graphice only -->
+                                    <?php if($SLid==4) : ?> 
+                                        <div class="media img-01">
+                                            <img src="assets/images/services_details/27.jpg" alt="services images">
+                                        </div>
+                                    <?php endif; ?>                                    
+                                    <!-- end-motion-graphice only -->                                                                        
                                     <h3>Our Success <span class="text-color-3">[JOURNEY]</span> We Can Provide.</h3>
-                                    <p class="text"><?php echo $Sdetails->_Sjourney; ?></p> 
+                                    <p class="text"><?= config::Company["name"]; ?> <?php echo html_entity_decode($Sdetails->_Sjourney); ?></p>                                     
+
+
                                     <ul class="icon-box">
                                         <li class="icon icon-one">
                                             <img src="assets/images/icon/icon-journey-1.png" alt="images">  
@@ -251,7 +274,6 @@ if (isset($_GET["SLid"])) {
                                         <br><br>
                                     <!--END COMPANY INFORMATION -->                                        
 
-
                                     <!--Widget-categories-->
                                     <div class="widget widget-categories"> 
                                         <div class="widget-title item">
@@ -277,15 +299,15 @@ if (isset($_GET["SLid"])) {
                                             <h3>Recent Works</h3>
                                         </div>
                                         <div class="tags_cloud_inner ">
-                                            <a href="blog-grid.php">Creative</a>
-                                            <a href="blog-grid.php">Agency</a>
-                                            <a href="blog-grid.php">Business</a>
-                                            <a href="blog-grid.php">Corporate</a>
-                                            <a href="blog-grid.php" class="active">Digital</a>
-                                            <a href="blog-grid.php">SEO</a>
-                                            <a href="blog-grid.php">UX?UI</a>
-                                            <a href="blog-grid.php">Web Design</a>
-                                            <a href="blog-grid.php">Graphics Design</a>
+                                            <a href="recent-work" class="active">Web Development</a>
+                                            <a href="recent-work">Digital Marketing</a>
+                                            <a href="recent-work">Graphics Design</a>
+                                            <a href="recent-work">Still Motion Graphics</a>
+                                            <a href="recent-work" >Digital</a>
+                                            <a href="recent-work">SEO Analysis</a>
+                                            <a href="recent-work">UX & UI</a>
+                                            <a href="recent-work">Web Design</a>
+                                            <!-- <a href="blog-grid.php">Template</a> -->
                                         </div>
                                     </div>
 

@@ -119,6 +119,7 @@
 
     <!-- Javascript -->
     <script src="assets/js/jquery.min.js"></script>
+    <script src="rating-plugins/dist/jquery.star-rating-svg.js"></script>
     <script src="assets/js/countto.js"></script>
     <script src="assets/js/wow.min.js"></script>
     <script src="assets/js/main.js"></script>
@@ -130,9 +131,3 @@
     <!-- Swiper slide -->
     <script src="assets/js/swiper-bundle.min.js"></script>
     <script src="assets/js/swiper.js"></script>
-
-</body>
-
-
-<!-- Mirrored from themesflat.co/php/bixos/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 12 Apr 2023 12:19:42 GMT -->
-</php>
