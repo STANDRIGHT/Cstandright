@@ -14,9 +14,18 @@ if (isset($_GET["blog"])) {
 
     //13 MAKE QUERY FOR COMMENTS
     $comments = $app->comments($blog);
-} else {
+ } else {
     // echo "<script>window.location.href='index.php'</script>";
 }
+
+//making query for rating
+// $ratings = $db->query("SELECT * FROM rates WHERE comment_id =:_com_id");
+// $ratings->execute();
+
+// $rating = $ratings->fetch(PDO:: FETCH_OBJ);
+// print_r($rating);
+
+
 ?>
 
 
@@ -129,8 +138,12 @@ if (isset($_GET["blog"])) {
                                         </div>
 
                                         <!-- Rating Sytem -->
-                                        <div class="my-rating"></div>
-                                        <input type="text" id="rating" value=" ">
+                                        <form action="" id="form-data">
+                                            <!-- <div onclick="h($('#rating').val(), $('#post_id').val())" class="my-rating"></div> -->
+                                            <div class="my-rating"></div>
+                                            <input type="text" id="rating" name="rating" value="">
+                                            <input type="text" id="comment_id" name="comment_id" value="<?= $comment->_com_id; ?>">
+                                        </form>
                                         <!-- end of rating system -->
 
                                         <div class="comment-text">
@@ -308,12 +321,47 @@ if (isset($_GET["blog"])) {
 <!-- Rating star starts here  for javascript-->
 <script>
     $(".my-rating").starRating({
-        starSize: 25,
+        starSize: 18,
         callback: function(currentRating, $el) {
+            initialRating
+
             // make a server call here
             $("#rating").val(currentRating);
+            var formdata = $("#form-data").serialize() + "&insert=insert";
+            $.ajax({
+                type: "POST",
+                url: "insert-ratings.php",
+                data: formdata,
+
+                success: function() {
+                    // alert(formdata);
+                }
+            });
         }
-        
     });
+
+
+
+
+    // function pppj(){
+    //     alert(9)
+    // e.preventDefault();
+
+
+    // function h(rating, post){
+    //     $.ajax({
+    //         url:'insert-ratings.php',
+    //         method:'POST',
+    //         dataType:'JSON',
+    //         data:{post_id:post, rating:rating},
+    //         success: function(resp){
+    //             if(resp.status===1){
+    //                 console.log(resp.message);
+    //             }else{
+    //                 console.log(resp.message);
+    //             }
+    //         }
+    //     })
+    // }
 </script>
 <!-- End of rating star for javascript -->
